@@ -7,7 +7,6 @@ INDEX VERSION 1.126+/Users/anthonywittemann/Google Drive/Projects/effective-velo
 1769317737.index
 3794497040.index
 3302703152.index
-1155894317.index
 1271342938.index
 2211732093.index
 2178737305.index
