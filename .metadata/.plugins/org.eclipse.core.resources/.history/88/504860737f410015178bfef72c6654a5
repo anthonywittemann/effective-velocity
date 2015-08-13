@@ -1308,7 +1308,7 @@ public class MainC extends JPanel implements ActionListener, MouseListener, Mous
 					g2.fillRect(w/4 +1, h/4 +2* h/5+1, w /10-1, h/10-1);
 				}
 			}
-			if(true){//if(showCU == true){ //TODO suspicious
+			if(showCU == true){ //TODO suspicious
 				if(hiLiCU == true){
 					g2.setColor(new Color(255,128,0));
 				}
@@ -1364,7 +1364,7 @@ public class MainC extends JPanel implements ActionListener, MouseListener, Mous
 					g2.fillRect(w/4 +1, h/4 +2* h/5+1, w /10-1, h/10-1);
 				}
 			}
-			if(true){//if(showOS == true){ //TODO suspicious
+			if(showOS == true){ //TODO suspicious
 				if(hiLiOS == true){
 					g2.setColor(new Color(255,255,0));
 				}
@@ -1478,7 +1478,7 @@ public class MainC extends JPanel implements ActionListener, MouseListener, Mous
 					g2.fillRect(w/4 + 4*w/10+1, h/4 + 4*h/10+1, w /10-1, h/10-1);
 				}
 			}
-			if(true){//if(showCU == true){ //TODO looks suspicious
+			if(showCU == true){ //TODO looks suspicious
 				if(hiLiCU == true){
 					g2.setColor(new Color(255,128,0));
 				}
@@ -1534,7 +1534,7 @@ public class MainC extends JPanel implements ActionListener, MouseListener, Mous
 					g2.fillRect(w/4 + 4*w/10+1, h/4 + 4*h/10+1, w /10-1, h/10-1);
 				}
 			}
-			if(true){//if(showOS == true){ //TODO also looks suspicious
+			if(showOS == true){ //TODO also looks suspicious
 				if(hiLiOS == true){
 					g2.setColor(new Color(255,255,0));
 				}

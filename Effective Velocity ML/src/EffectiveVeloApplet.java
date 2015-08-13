@@ -1,10 +1,31 @@
+import java.awt.BasicStroke;
+import java.awt.BorderLayout;
+import java.awt.Color;
+import java.awt.Container;
+import java.awt.Dimension;
+import java.awt.Font;
+import java.awt.Graphics;
+import java.awt.Graphics2D;
+import java.awt.GridBagConstraints;
+import java.awt.GridBagLayout;
+import java.awt.GridLayout;
+import java.awt.RenderingHints;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+import java.awt.event.MouseEvent;
+import java.awt.event.MouseListener;
+import java.awt.event.MouseMotionListener;
 
-import java.awt.*;
-import java.awt.event.*;
-import javax.swing.*;
+import javax.swing.JApplet;
+import javax.swing.JButton;
+import javax.swing.JLabel;
+import javax.swing.JPanel;
+import javax.swing.JToggleButton;
 
 
-public class MainC extends JPanel implements ActionListener, MouseListener, MouseMotionListener{
+public class EffectiveVeloApplet extends JApplet implements ActionListener, MouseListener, MouseMotionListener{
+	
+	
 	//4 EFFECTIVE VELOCITY MPH DIFFERENCE NEEDED! DEFAULT
 	//assumes oS is - 15 mph from fB
 	//assumes cU is -7 mph from fB
@@ -95,20 +116,16 @@ public class MainC extends JPanel implements ActionListener, MouseListener, Mous
 	private JButton offSpeed = new JButton("Off Speed");
 	private boolean wasFB;
 	private boolean wasCU;
-	private boolean showFB; //TODO never defined
+	private boolean showFB;
 	private boolean hiLiFB;
 	private boolean hiLiCU;
 	private boolean hiLiOS;
 	private JLabel pitchLbl = new JLabel("Pitch:    ");
 	private JLabel previousPitchLbl = new JLabel("Previous Pitch: ");
-	
-	
-	
-	
-	public MainC(){
+
+	public EffectiveVeloApplet(){
 		setPreferredSize(new Dimension(700,700));
-		JFrame jf = new JFrame("Effective Velocity");
-		jf.setResizable(false);
+		JApplet ja = new JApplet();
 		this.setLayout(new BorderLayout());
 		
 		
@@ -175,18 +192,20 @@ public class MainC extends JPanel implements ActionListener, MouseListener, Mous
 		
 		
 		//Frame stuff
-		Container lid = jf.getContentPane();
+		Container lid = ja.getContentPane();
 		lid.add(this);
 		rH.addActionListener(this); lH.addActionListener(this); nB.addActionListener(this);
 		addMouseListener(this);
 		addMouseMotionListener(this);
 		setBackground(Color.black);
-		jf.pack();
-		jf.setVisible(true);
+		//ja.pack();
+		ja.setVisible(true);
 		this.requestFocusInWindow();
 		javax.swing.Timer t = new javax.swing.Timer(50,this);
 		t.start();
 	}
+	
+	
 	protected void setBooleansFalse(){
 		if(C4 == true){
 		}
@@ -1228,28 +1247,23 @@ public class MainC extends JPanel implements ActionListener, MouseListener, Mous
 		super.paintComponent(g2);
 		g2.setStroke(new BasicStroke(3));
 		g2.setColor(Color.white);
-		
 		//for the grid
 		int w = getWidth(); int h = getHeight();
 		g2.drawLine(w / 4, h/4, 3*w/4, h/4);
 		g2.drawLine(w / 4, h/4, w/4, 3* h/4);
 		g2.drawLine(w / 4, 3*h/4, 3*w/4, 3*h/4);
 		g2.drawLine(3*w / 4, h/4, 3*w/4,3* h/4);
-		
 		g2.setStroke(new BasicStroke(2));
-		
 		//vertical bars
 		g2.drawLine(w/4 + w/10, h/4,w/4 + w/10, 3 * h/4);
 		g2.drawLine(w/4 + w/5, h/4,w/4 + w/5, 3 * h/4);
 		g2.drawLine(w/4 + 3*w/10, h/4,w/4 + 3*w/10, 3 * h/4);
 		g2.drawLine(w/4 + 2*w/5, h/4,w/4 + 2*w/5, 3 * h/4);
-		
 		//horizontal bars
 		g2.drawLine(w/4, h/4+h/10, 3*w/4, h/4+h/10);
 		g2.drawLine(w/4, h/4+h/5, 3*w/4, h/4+h/5);
 		g2.drawLine(w/4, h/4+3*h/10, 3*w/4, h/4+3*h/10);
 		g2.drawLine(w/4, h/4+2*h/5, 3*w/4, h/4+2*h/5);
-		
 		//for filling boxes
 		if(wH == true){
 			if(showFB = true){
@@ -1308,7 +1322,7 @@ public class MainC extends JPanel implements ActionListener, MouseListener, Mous
 					g2.fillRect(w/4 +1, h/4 +2* h/5+1, w /10-1, h/10-1);
 				}
 			}
-			if(true){//if(showCU == true){ //TODO suspicious
+			if(true){ //TODO suspicious
 				if(hiLiCU == true){
 					g2.setColor(new Color(255,128,0));
 				}
@@ -1364,7 +1378,7 @@ public class MainC extends JPanel implements ActionListener, MouseListener, Mous
 					g2.fillRect(w/4 +1, h/4 +2* h/5+1, w /10-1, h/10-1);
 				}
 			}
-			if(true){//if(showOS == true){ //TODO suspicious
+			if(true){ //TODO suspicious
 				if(hiLiOS == true){
 					g2.setColor(new Color(255,255,0));
 				}
@@ -1478,7 +1492,7 @@ public class MainC extends JPanel implements ActionListener, MouseListener, Mous
 					g2.fillRect(w/4 + 4*w/10+1, h/4 + 4*h/10+1, w /10-1, h/10-1);
 				}
 			}
-			if(true){//if(showCU == true){ //TODO looks suspicious
+			if(true){ //TODO looks suspicious
 				if(hiLiCU == true){
 					g2.setColor(new Color(255,128,0));
 				}
@@ -1534,7 +1548,7 @@ public class MainC extends JPanel implements ActionListener, MouseListener, Mous
 					g2.fillRect(w/4 + 4*w/10+1, h/4 + 4*h/10+1, w /10-1, h/10-1);
 				}
 			}
-			if(true){//if(showOS == true){ //TODO also looks suspicious
+			if(true){ //TODO also looks suspicious
 				if(hiLiOS == true){
 					g2.setColor(new Color(255,255,0));
 				}
@@ -1600,9 +1614,12 @@ public class MainC extends JPanel implements ActionListener, MouseListener, Mous
 	public void mouseExited(MouseEvent e) {}
 	public void mouseDragged(MouseEvent e) {}
 	
-	
-	public static void main(String args[]){
-		new MainC();
+	/**
+	 * @param args
+	 */
+	public static void main(String[] args) {
+		new EffectiveVeloApplet();
+
 	}
 
 }

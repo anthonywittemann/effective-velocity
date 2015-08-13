@@ -1,0 +1,212 @@
+import java.awt.BorderLayout;
+import java.awt.Color;
+import java.awt.Container;
+import java.awt.Dimension;
+import java.awt.Font;
+import java.awt.GridBagConstraints;
+import java.awt.GridBagLayout;
+import java.awt.GridLayout;
+import java.awt.event.ActionListener;
+import java.awt.event.MouseListener;
+import java.awt.event.MouseMotionListener;
+
+import javax.swing.JApplet;
+import javax.swing.JButton;
+import javax.swing.JFrame;
+import javax.swing.JLabel;
+import javax.swing.JPanel;
+import javax.swing.JToggleButton;
+
+
+public class EffectiveVeloApplet extends JPanel implements ActionListener, MouseListener, MouseMotionListener{
+	
+	
+	//4 EFFECTIVE VELOCITY MPH DIFFERENCE NEEDED! DEFAULT
+	//assumes oS is - 15 mph from fB
+	//assumes cU is -7 mph from fB
+	//TODO FINISH LEFTIES ZONES and figure out why lefty zomes won't fill in
+	private int clx;
+	private int cly;
+	private int mx;
+	private int my;
+	private boolean wH;
+	private JButton rH = new JButton();
+	private JButton lH = new JButton();
+	private JButton nB = new JButton();
+	private JPanel batterty = new JPanel();
+	private JPanel nextPitchInfo = new JPanel();
+	private boolean soh = true;
+	private JToggleButton showORhide = new JToggleButton(">", soh);
+	private JLabel nextPitch = new JLabel();
+	private JLabel fB = new JLabel("FastBall");
+	private JLabel cU = new JLabel("Change-Up");
+	private JLabel oS = new JLabel("Off Speed");
+	private int aNr = 200;
+	//booleans for highlighting different boxes
+	private boolean r0;
+	private boolean r1;
+	private boolean r2;
+	private boolean r3;
+	private boolean r4;
+	private boolean r1n;
+	private boolean r2n;
+	private boolean r3n;
+	private boolean r4n;
+	private boolean l0;
+	private boolean l1;
+	private boolean l2;
+	private boolean l3;
+	private boolean l4;
+	private boolean l1n;
+	private boolean l2n;
+	private boolean l3n;
+	private boolean l4n;
+	private boolean lc0;
+	private boolean lc1;
+	private boolean lc2;
+	private boolean lc3;
+	private boolean lc4;
+	private boolean lc1n;
+	private boolean lc2n;
+	private boolean lc3n;
+	private boolean lc4n;
+	private boolean lo0;
+	private boolean lo1;
+	private boolean lo2;
+	private boolean lo3;
+	private boolean lo4;
+	private boolean lo1n;
+	private boolean lo2n;
+	private boolean lo3n;
+	private boolean lo4n;
+	private boolean  C4;
+	private boolean  C3;
+	private boolean  C2;
+	private boolean  C1;
+	private boolean  C0;
+	private boolean  C4n;
+	private boolean  C3n;
+	private boolean  C2n;
+	private boolean  C1n;
+	private boolean  O4;
+	private boolean  O3;
+	private boolean  O2;
+	private boolean  O1;
+	private boolean  O0;
+	private boolean  O4n;
+	private boolean  O3n;
+	private boolean  O2n;
+	private boolean  O1n;
+	//info about pitches
+	private int EVfactor;
+	private JPanel SouthPanel = new JPanel();
+	private JPanel PitchLogPanel = new JPanel();
+	
+	
+	//stuff for asking what type of pitch it was
+	private JPanel TopPanel = new JPanel();
+	private JPanel bTP = new JPanel();
+	private JButton fastB = new JButton("Fastball");
+	private JButton changeU = new JButton ("Change-Up"); 
+	private JButton offSpeed = new JButton("Off Speed");
+	private boolean wasFB;
+	private boolean wasCU;
+	private boolean showFB;
+	private boolean hiLiFB;
+	private boolean hiLiCU;
+	private boolean hiLiOS;
+	private JLabel pitchLbl = new JLabel("Pitch:    ");
+	private JLabel previousPitchLbl = new JLabel("Previous Pitch: ");
+
+	public EffectiveVeloApplet(){
+		setPreferredSize(new Dimension(700,700));
+		JApplet ja = new JApplet();
+		this.setLayout(new BorderLayout());
+		
+		
+		//for Top Info
+		batterty.setLayout(new GridBagLayout()); batterty.setBackground(new Color(0,0,0,0));
+		GridBagConstraints c = new GridBagConstraints();
+		c.weightx = .2; c.weighty = 1; 	 rH.setVisible(false);	
+		rH.setFont(new Font("Lucida", Font.BOLD, 48)); rH.setText("Righty"); batterty.add(rH, c); 
+		c.weightx = .4; c.weighty = 1;
+		nB.setFont(new Font("Lucida", Font.BOLD, 54)); nB.setText("New Batter"); batterty.add(nB, c); 
+		c.weightx = .2; c.weighty = 1;lH.setVisible(false);
+		lH.setFont(new Font("Lucida", Font.BOLD, 48)); lH.setText("Lefty"); batterty.add(lH, c);
+		TopPanel.setLayout(new GridLayout(2,0,30,30)); TopPanel.add(batterty); TopPanel.setBackground(new Color(0,0,0,0));
+		
+		
+		//just below top info (asks what Type of pitch it was)
+		GridBagConstraints gi = new GridBagConstraints();
+		bTP.setLayout(new GridBagLayout());
+		gi.weightx = .25; gi.weighty = 1;
+		fastB.setFont(new Font("Lucida", Font.PLAIN, 36)); fastB.addActionListener(this); bTP.add(fastB, gi);
+		gi.weightx = .25; gi.weighty = 1;
+		changeU.setFont(new Font("Lucida", Font.PLAIN, 36)); changeU.addActionListener(this); bTP.add(changeU, gi);
+		gi.weightx = .25; gi.weighty = 1;
+		offSpeed.setFont(new Font("Lucida", Font.PLAIN, 36)); offSpeed.addActionListener(this); bTP.add(offSpeed, gi);
+		TopPanel.add(bTP); bTP.setBackground(new Color(0,0,0,0)); bTP.setVisible(false);
+		this.add(TopPanel, BorderLayout.NORTH);
+		
+		
+		//just above bottom info
+		SouthPanel.setLayout(new BorderLayout()); SouthPanel.setBackground(new Color(0,0,0,0)); 
+		PitchLogPanel.setLayout(new GridBagLayout()); PitchLogPanel.setBackground(new Color(0,0,0,0)); PitchLogPanel.setVisible(true);
+		GridBagConstraints gr = new GridBagConstraints();
+		JPanel pI = new JPanel(); pI.setLayout(new BorderLayout()); pI.setBackground(new Color(0,0,0,0)); 
+		pitchLbl.setForeground(Color.white);previousPitchLbl.setForeground(Color.white);
+		pitchLbl.setFont(new Font("Lucida", Font.PLAIN, 20));previousPitchLbl.setFont(new Font("Lucida", Font.PLAIN, 20));
+		pI.add(pitchLbl, BorderLayout.WEST); pI.add(previousPitchLbl, BorderLayout.EAST); pI.setVisible(true);
+		gr.weightx = .2; gr.weighty = 1; gr.anchor = GridBagConstraints.LINE_START; 
+		PitchLogPanel.add(pI, gr);
+	//	gr.weightx = .8; gr.weighty = 1;
+		
+		
+		//TODO add Panel with log of Pitches
+
+		SouthPanel.add(PitchLogPanel, BorderLayout.NORTH);
+		//Bottom Info
+		nextPitchInfo.setLayout(new GridBagLayout()); nextPitchInfo.setBackground(new Color(0,0,0,0)); nextPitchInfo.setVisible(true);
+		GridBagConstraints gb = new GridBagConstraints();
+		gb.weightx = .2; gb.weighty = 1; gb.anchor = GridBagConstraints.LINE_START;
+		nextPitch.setFont(new Font("Lucida", Font.PLAIN, 20)); nextPitch.setText("Specific Pitches: "); nextPitch.setForeground(new Color(255,152,0)); 
+		nextPitch.setVisible(false);nextPitchInfo.add(nextPitch, gb);
+		gb.weightx = .18; gb.weighty = 1;
+		fB.setFont(new Font("Lucida", Font.PLAIN, 20)); fB.setForeground(new Color(255,152,0));fB.setVisible(false); nextPitchInfo.add(fB, gb);
+		gb.weightx = .18; gb.weighty = 1;
+		cU.setFont(new Font("Lucida", Font.PLAIN, 20)); cU.setForeground(new Color(255,152,0));cU.setVisible(false); nextPitchInfo.add(cU, gb);
+		gb.weightx = .18; gb.weighty = 1;
+		oS.setFont(new Font("Lucida", Font.PLAIN, 20)); oS.setForeground(new Color(255,152,0));oS.setVisible(false); nextPitchInfo.add(oS, gb);
+		gb.weightx = .2; gb.weighty = 1; gb.anchor = GridBagConstraints.LINE_END;
+		showORhide.setFont(new Font("Lucida", Font.BOLD, 20)); nextPitchInfo.add(showORhide, gb);
+		showORhide.addActionListener(this);
+		nextPitchInfo.setSize(getWidth(), 9 * getHeight()/10);
+		SouthPanel.add(nextPitchInfo, BorderLayout.SOUTH); 
+		//pitch and previous pitch info
+		this.add(SouthPanel, BorderLayout.SOUTH);
+		
+		
+		//Frame stuff
+		Container lid = ja.getContentPane();
+		lid.add(this);
+		rH.addActionListener(this); lH.addActionListener(this); nB.addActionListener(this);
+		addMouseListener(this);
+		addMouseMotionListener(this);
+		setBackground(Color.black);
+		//ja.pack();
+		ja.setVisible(true);
+		this.requestFocusInWindow();
+		javax.swing.Timer t = new javax.swing.Timer(50,this);
+		t.start();
+	}
+	
+	
+	/**
+	 * @param args
+	 */
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+	}
+
+}
