@@ -725,7 +725,7 @@ public class MainC extends JPanel implements ActionListener, MouseListener, Mous
 				}
 			}
 		}
-		//for lefties
+		//for lefties TODO verify it mirrors righties
 		// -----------EV ZONES------------
 		//   | 4  | 3  | 2  | 1  | 0  |
 		//   | 3  | 2  | 1  | 0  | -1 |
@@ -988,7 +988,7 @@ public class MainC extends JPanel implements ActionListener, MouseListener, Mous
 			rHButton.setVisible(true);
 			lHButton.setVisible(true);
 			newBatterButton.setVisible(false);
-			instructionsLbl.setVisible(false);
+			instructionsLbl.setVisible(true);
 			setALLBsF();
 		}
 		if(e.getSource() == rHButton){
@@ -996,14 +996,14 @@ public class MainC extends JPanel implements ActionListener, MouseListener, Mous
 			rHButton.setVisible(false);
 			lHButton.setVisible(false);
 			newBatterButton.setVisible(true);
-			instructionsLbl.setVisible(true);
+			instructionsLbl.setVisible(false);
 		}
 		else if(e.getSource() == lHButton){
 			wH = false;
 			rHButton.setVisible(false);
 			lHButton.setVisible(false);
 			newBatterButton.setVisible(true);
-			instructionsLbl.setVisible(true);
+			instructionsLbl.setVisible(false);
 		}
 		if(e.getSource() == showORhideButton){
 			if(showORhide == false){

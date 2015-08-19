@@ -1003,7 +1003,7 @@ public class MainC extends JPanel implements ActionListener, MouseListener, Mous
 			rHButton.setVisible(false);
 			lHButton.setVisible(false);
 			newBatterButton.setVisible(true);
-			instructionsLbl.setVisible(true);
+			instructionsLbl.setVisible(false);
 		}
 		if(e.getSource() == showORhideButton){
 			if(showORhide == false){

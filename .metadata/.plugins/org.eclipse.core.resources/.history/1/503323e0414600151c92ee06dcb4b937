@@ -141,10 +141,9 @@ public class MainC extends JPanel implements ActionListener, MouseListener, Mous
 		changeU.setFont(new Font("Lucida", Font.PLAIN, 36)); changeU.addActionListener(this); pitchTypePanel.add(changeU, gi);
 		gi.weightx = .25; gi.weighty = 1;
 		offSpeed.setFont(new Font("Lucida", Font.PLAIN, 36)); offSpeed.addActionListener(this); pitchTypePanel.add(offSpeed, gi);
-		//TODO add instructions at the appropriate time - after batter is righty/lefty, before location is clicked
-//		instructionsLbl.setVisible(false);
-//		instructionsLbl.setFont(new Font("Lucida", Font.PLAIN, 24)); instructionsLbl.setForeground(new Color(255,70,0)); instructionsLbl.setText("Click on the location of the pitch"); battertyPanel.add(instructionsLbl, c);
-		TopPanel.add(pitchTypePanel); pitchTypePanel.setBackground(new Color(0,0,0,0)); pitchTypePanel.setVisible(false);
+		instructionsLbl.setVisible(false);
+		instructionsLbl.setFont(new Font("Lucida", Font.PLAIN, 24)); instructionsLbl.setForeground(new Color(255,70,0)); instructionsLbl.setText("Click on the location of the pitch"); pitchTypePanel.add(instructionsLbl, gi);
+		TopPanel.add(pitchTypePanel); pitchTypePanel.setBackground(new Color(0,0,0,0)); pitchTypePanel.setVisible(true);
 		this.add(TopPanel, BorderLayout.NORTH);
 		
 		
@@ -161,7 +160,7 @@ public class MainC extends JPanel implements ActionListener, MouseListener, Mous
 	//	gr.weightx = .8; gr.weighty = 1;
 		
 		
-		//TODO add Panel with log of Pitches, instructions on how to hover mouse over pitch types
+		//TODO add Panel with log of Pitches, instructions on how to use - ie hover mouse over pitch types, click in pitch location for a new pitch
 
 		SouthPanel.add(PitchLogPanel, BorderLayout.NORTH);
 		//Bottom Info
@@ -206,7 +205,7 @@ public class MainC extends JPanel implements ActionListener, MouseListener, Mous
 		if(clx > getWidth()/4 && cly > getHeight()/4 && clx < 3*getWidth()/4 && cly < 3 * getWidth()/4){
 			pitchTypePanel.setVisible(true); pitchTypePanel.requestFocus();
 			showORhide = false; 
-			setALLBsF();
+			setALLBsF(); //TODO investigate
 		}
 		//for righty	
 	}
@@ -725,7 +724,7 @@ public class MainC extends JPanel implements ActionListener, MouseListener, Mous
 				}
 			}
 		}
-		//for lefties
+		//for lefties TODO verify it mirrors righties
 		// -----------EV ZONES------------
 		//   | 4  | 3  | 2  | 1  | 0  |
 		//   | 3  | 2  | 1  | 0  | -1 |
@@ -988,7 +987,7 @@ public class MainC extends JPanel implements ActionListener, MouseListener, Mous
 			rHButton.setVisible(true);
 			lHButton.setVisible(true);
 			newBatterButton.setVisible(false);
-			instructionsLbl.setVisible(false);
+			instructionsLbl.setVisible(true);
 			setALLBsF();
 		}
 		if(e.getSource() == rHButton){
@@ -996,14 +995,14 @@ public class MainC extends JPanel implements ActionListener, MouseListener, Mous
 			rHButton.setVisible(false);
 			lHButton.setVisible(false);
 			newBatterButton.setVisible(true);
-			instructionsLbl.setVisible(true);
+			instructionsLbl.setVisible(false);
 		}
 		else if(e.getSource() == lHButton){
 			wH = false;
 			rHButton.setVisible(false);
 			lHButton.setVisible(false);
 			newBatterButton.setVisible(true);
-			instructionsLbl.setVisible(true);
+			instructionsLbl.setVisible(false);
 		}
 		if(e.getSource() == showORhideButton){
 			if(showORhide == false){
