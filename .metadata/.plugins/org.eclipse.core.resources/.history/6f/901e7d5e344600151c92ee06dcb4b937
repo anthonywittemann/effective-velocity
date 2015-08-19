@@ -1276,357 +1276,341 @@ public class MainC extends JPanel implements ActionListener, MouseListener, Mous
 		if(wH == true){ //for righties
 			//if(showFB == true){
 			if(hiLiFB == true){
-				g2.setColor(new Color(255,0,0,aNr));
-				if(r0 == true){
-					g2.fillRect(w/4+1, h/4+1, w /10-1, h/10-1);
-					g2.fillRect(w/4 + w/10+1, h/4 + h/10+1, w /10-1, h/10-1);
-					g2.fillRect(w/4 + w/5+1, h/4 + h/5+1, w /10-1, h/10-1);
-					g2.fillRect(w/4 + 3*w/10+1, h/4 + 3*h/10+1, w /10-1, h/10-1);
-					g2.fillRect(w/4 + 4*w/10+1, h/4 + 4*h/10+1, w /10-1, h/10-1);
+				g2.setColor(new Color(255,0,0));
+			}
+			else{
+				if(hiLiCU == true || hiLiOS == true){
+					g2.setColor(new Color(255,0,0,10));
 				}
-				if(r1 == true){
-					g2.fillRect(w/4 + w/10+1, h/4+1, w /10-1, h/10-1);
-					g2.fillRect(w/4 + w/5+1, h/4 + w/10+1, w /10-1, h/10-1);
-					g2.fillRect(w/4 + 3*w/10+1, h/4 + w/5+1, w /10-1, h/10-1);
-					g2.fillRect(w/4 + 4*w/10+1, h/4 + 3*w/10+1, w /10-1, h/10-1);
-				}
-				if(r1n == true){
-					g2.fillRect(w/4 +1, h/4+ w/10+1, w /10-1, h/10-1);
-					g2.fillRect(w/4 + w/10+1, h/4 + w/5+1, w /10-1, h/10-1);
-					g2.fillRect(w/4 + w/5+1, h/4 + 3*w/10+1, w /10-1, h/10-1);
-					g2.fillRect(w/4 + 3*w/10+1, h/4 + 4*w/10+1, w /10-1, h/10-1);
-				}
-				if(r2 == true){
-					g2.fillRect(w/4 + w/5+1, h/4 +1, w /10-1, h/10-1);
-					g2.fillRect(w/4 + 3*w/10+1, h/4 + w/10+1, w /10-1, h/10-1);
-					g2.fillRect(w/4 + 4*w/10+1, h/4 + w/5+1, w /10-1, h/10-1);
-				}
-				if(r2n == true){
-					g2.fillRect(w/4 +1, h/4 + h/5+1, w /10-1, h/10-1);
-					g2.fillRect(w/4 + w/10+1, h/4 + 3*h/10+1, w /10-1, h/10-1);
-					g2.fillRect(w/4 + w/5+1, h/4 +2* h/5+1, w /10-1, h/10-1);
-				}
-				if(r3 == true){
-					g2.fillRect(w/4 + 3*w/10+1, h/4 +1, w /10-1, h/10-1);
-					g2.fillRect(w/4 + 4*w/10+1, h/4 + w/10+1, w /10-1, h/10-1);
-				}
-				if(r3n == true){
-					g2.fillRect(w/4 +1, h/4 + 3*h/10+1, w /10-1, h/10-1);
-					g2.fillRect(w/4 + w/10+1, h/4 +2* h/5+1, w /10-1, h/10-1);
-				}
-				if(r4 == true){
-					g2.fillRect(w/4 + 4*w/10+1, h/4 +1, w /10-1, h/10-1);
-				}
-				if(r4n == true){
-					g2.fillRect(w/4 +1, h/4 +2* h/5+1, w /10-1, h/10-1);
+				else{
+					g2.setColor(new Color(255,0,0,aNr));
 				}
 			}
-			else if(hiLiCU == true){
-				g2.setColor(new Color(255,128,0,aNr));
-				if(C0 == true){
-					g2.fillRect(w/4+1, h/4+1, w /10-1, h/10-1);
-					g2.fillRect(w/4 + w/10+1, h/4 + h/10+1, w /10-1, h/10-1);
-					g2.fillRect(w/4 + w/5+1, h/4 + h/5+1, w /10-1, h/10-1);
-					g2.fillRect(w/4 + 3*w/10+1, h/4 + 3*h/10+1, w /10-1, h/10-1);
-					g2.fillRect(w/4 + 4*w/10+1, h/4 + 4*h/10+1, w /10-1, h/10-1);
-				}
-				if(C1 == true){
-					g2.fillRect(w/4 + w/10+1, h/4+1, w /10-1, h/10-1);
-					g2.fillRect(w/4 + w/5+1, h/4 + w/10+1, w /10-1, h/10-1);
-					g2.fillRect(w/4 + 3*w/10+1, h/4 + w/5+1, w /10-1, h/10-1);
-					g2.fillRect(w/4 + 4*w/10+1, h/4 + 3*w/10+1, w /10-1, h/10-1);
-				}
-				if(C1n == true){
-					g2.fillRect(w/4 +1, h/4+ w/10+1, w /10-1, h/10-1);
-					g2.fillRect(w/4 + w/10+1, h/4 + w/5+1, w /10-1, h/10-1);
-					g2.fillRect(w/4 + w/5+1, h/4 + 3*w/10+1, w /10-1, h/10-1);
-					g2.fillRect(w/4 + 3*w/10+1, h/4 + 4*w/10+1, w /10-1, h/10-1);
-				}
-				if(C2 == true){
-					g2.fillRect(w/4 + w/5+1, h/4 +1, w /10-1, h/10-1);
-					g2.fillRect(w/4 + 3*w/10+1, h/4 + w/10+1, w /10-1, h/10-1);
-					g2.fillRect(w/4 + 4*w/10+1, h/4 + w/5+1, w /10-1, h/10-1);
-				}
-				if(C2n == true){
-					g2.fillRect(w/4 +1, h/4 + h/5+1, w /10-1, h/10-1);
-					g2.fillRect(w/4 + w/10+1, h/4 + 3*h/10+1, w /10-1, h/10-1);
-					g2.fillRect(w/4 + w/5+1, h/4 +2* h/5+1, w /10-1, h/10-1);
-				}
-				if(C3 == true){
-					g2.fillRect(w/4 + 3*w/10+1, h/4 +1, w /10-1, h/10-1);
-					g2.fillRect(w/4 + 4*w/10+1, h/4 + w/10+1, w /10-1, h/10-1);
-				}
-				if(C3n == true){
-					g2.fillRect(w/4 +1, h/4 + 3*h/10+1, w /10-1, h/10-1);
-					g2.fillRect(w/4 + w/10+1, h/4 +2* h/5+1, w /10-1, h/10-1);
-				}
-				if(C4 == true){
-					g2.fillRect(w/4 + 4*w/10+1, h/4 +1, w /10-1, h/10-1);
-				}
-				if(C4n == true){
-					g2.fillRect(w/4 +1, h/4 +2* h/5+1, w /10-1, h/10-1);
-				}
+			if(r0 == true){
+				g2.fillRect(w/4+1, h/4+1, w /10-1, h/10-1);
+				g2.fillRect(w/4 + w/10+1, h/4 + h/10+1, w /10-1, h/10-1);
+				g2.fillRect(w/4 + w/5+1, h/4 + h/5+1, w /10-1, h/10-1);
+				g2.fillRect(w/4 + 3*w/10+1, h/4 + 3*h/10+1, w /10-1, h/10-1);
+				g2.fillRect(w/4 + 4*w/10+1, h/4 + 4*h/10+1, w /10-1, h/10-1);
 			}
-			else if(hiLiOS == true){
-				g2.setColor(new Color(255,255,0,aNr));
-				if(O0 == true){
-					g2.fillRect(w/4+1, h/4+1, w /10-1, h/10-1);
-					g2.fillRect(w/4 + w/10+1, h/4 + h/10+1, w /10-1, h/10-1);
-					g2.fillRect(w/4 + w/5+1, h/4 + h/5+1, w /10-1, h/10-1);
-					g2.fillRect(w/4 + 3*w/10+1, h/4 + 3*h/10+1, w /10-1, h/10-1);
-					g2.fillRect(w/4 + 4*w/10+1, h/4 + 4*h/10+1, w /10-1, h/10-1);
-				}
-				if(O1 == true){
-					g2.fillRect(w/4 + w/10+1, h/4+1, w /10-1, h/10-1);
-					g2.fillRect(w/4 + w/5+1, h/4 + w/10+1, w /10-1, h/10-1);
-					g2.fillRect(w/4 + 3*w/10+1, h/4 + w/5+1, w /10-1, h/10-1);
-					g2.fillRect(w/4 + 4*w/10+1, h/4 + 3*w/10+1, w /10-1, h/10-1);
-				}
-				if(O1n == true){
-					g2.fillRect(w/4 +1, h/4+ w/10+1, w /10-1, h/10-1);
-					g2.fillRect(w/4 + w/10+1, h/4 + w/5+1, w /10-1, h/10-1);
-					g2.fillRect(w/4 + w/5+1, h/4 + 3*w/10+1, w /10-1, h/10-1);
-					g2.fillRect(w/4 + 3*w/10+1, h/4 + 4*w/10+1, w /10-1, h/10-1);
-				}
-				if(O2 == true){
-					g2.fillRect(w/4 + w/5+1, h/4 +1, w /10-1, h/10-1);
-					g2.fillRect(w/4 + 3*w/10+1, h/4 + w/10+1, w /10-1, h/10-1);
-					g2.fillRect(w/4 + 4*w/10+1, h/4 + w/5+1, w /10-1, h/10-1);
-				}
-				if(O2n == true){
-					g2.fillRect(w/4 +1, h/4 + h/5+1, w /10-1, h/10-1);
-					g2.fillRect(w/4 + w/10+1, h/4 + 3*h/10+1, w /10-1, h/10-1);
-					g2.fillRect(w/4 + w/5+1, h/4 +2* h/5+1, w /10-1, h/10-1);
-				}
-				if(O3 == true){
-					g2.fillRect(w/4 + 3*w/10+1, h/4 +1, w /10-1, h/10-1);
-					g2.fillRect(w/4 + 4*w/10+1, h/4 + w/10+1, w /10-1, h/10-1);
-				}
-				if(O3n == true){
-					g2.fillRect(w/4 +1, h/4 + 3*h/10+1, w /10-1, h/10-1);
-					g2.fillRect(w/4 + w/10+1, h/4 +2* h/5+1, w /10-1, h/10-1);
-				}
-				if(O4 == true){
-					g2.fillRect(w/4 + 4*w/10+1, h/4 +1, w /10-1, h/10-1);
-				}
-				if(O4n == true){
-					g2.fillRect(w/4 +1, h/4 +2* h/5+1, w /10-1, h/10-1);
-				}
+			if(r1 == true){
+				g2.fillRect(w/4 + w/10+1, h/4+1, w /10-1, h/10-1);
+				g2.fillRect(w/4 + w/5+1, h/4 + w/10+1, w /10-1, h/10-1);
+				g2.fillRect(w/4 + 3*w/10+1, h/4 + w/5+1, w /10-1, h/10-1);
+				g2.fillRect(w/4 + 4*w/10+1, h/4 + 3*w/10+1, w /10-1, h/10-1);
 			}
-//			else{
-//				if(hiLiCU == true || hiLiOS == true){
-//					g2.setColor(new Color(255,0,0,10));
-//				}
-//				else{
-//					g2.setColor(new Color(255,0,0,aNr));
-//				}
-//			}
-
+			if(r1n == true){
+				g2.fillRect(w/4 +1, h/4+ w/10+1, w /10-1, h/10-1);
+				g2.fillRect(w/4 + w/10+1, h/4 + w/5+1, w /10-1, h/10-1);
+				g2.fillRect(w/4 + w/5+1, h/4 + 3*w/10+1, w /10-1, h/10-1);
+				g2.fillRect(w/4 + 3*w/10+1, h/4 + 4*w/10+1, w /10-1, h/10-1);
+			}
+			if(r2 == true){
+				g2.fillRect(w/4 + w/5+1, h/4 +1, w /10-1, h/10-1);
+				g2.fillRect(w/4 + 3*w/10+1, h/4 + w/10+1, w /10-1, h/10-1);
+				g2.fillRect(w/4 + 4*w/10+1, h/4 + w/5+1, w /10-1, h/10-1);
+			}
+			if(r2n == true){
+				g2.fillRect(w/4 +1, h/4 + h/5+1, w /10-1, h/10-1);
+				g2.fillRect(w/4 + w/10+1, h/4 + 3*h/10+1, w /10-1, h/10-1);
+				g2.fillRect(w/4 + w/5+1, h/4 +2* h/5+1, w /10-1, h/10-1);
+			}
+			if(r3 == true){
+				g2.fillRect(w/4 + 3*w/10+1, h/4 +1, w /10-1, h/10-1);
+				g2.fillRect(w/4 + 4*w/10+1, h/4 + w/10+1, w /10-1, h/10-1);
+			}
+			if(r3n == true){
+				g2.fillRect(w/4 +1, h/4 + 3*h/10+1, w /10-1, h/10-1);
+				g2.fillRect(w/4 + w/10+1, h/4 +2* h/5+1, w /10-1, h/10-1);
+			}
+			if(r4 == true){
+				g2.fillRect(w/4 + 4*w/10+1, h/4 +1, w /10-1, h/10-1);
+			}
+			if(r4n == true){
+				g2.fillRect(w/4 +1, h/4 +2* h/5+1, w /10-1, h/10-1);
+			}
 			//}
 		//if(showCU == true){//if(showCU == true){ //TODO suspicious
-//			if(hiLiCU == true){
-//				g2.setColor(new Color(255,128,0));
-//			}
-//			else{
-//				if(hiLiFB == true || hiLiOS == true){
-//					g2.setColor(new Color(255,128,0,10));
-//				}
-//				else{
-//					g2.setColor(new Color(255,128,0,aNr));
-//				}
-//			}
-
+			if(hiLiCU == true){
+				g2.setColor(new Color(255,128,0));
+			}
+			else{
+				if(hiLiFB == true || hiLiOS == true){
+					g2.setColor(new Color(255,128,0,10));
+				}
+				else{
+					g2.setColor(new Color(255,128,0,aNr));
+				}
+			}
+			if(C0 == true){
+				g2.fillRect(w/4+1, h/4+1, w /10-1, h/10-1);
+				g2.fillRect(w/4 + w/10+1, h/4 + h/10+1, w /10-1, h/10-1);
+				g2.fillRect(w/4 + w/5+1, h/4 + h/5+1, w /10-1, h/10-1);
+				g2.fillRect(w/4 + 3*w/10+1, h/4 + 3*h/10+1, w /10-1, h/10-1);
+				g2.fillRect(w/4 + 4*w/10+1, h/4 + 4*h/10+1, w /10-1, h/10-1);
+			}
+			if(C1 == true){
+				g2.fillRect(w/4 + w/10+1, h/4+1, w /10-1, h/10-1);
+				g2.fillRect(w/4 + w/5+1, h/4 + w/10+1, w /10-1, h/10-1);
+				g2.fillRect(w/4 + 3*w/10+1, h/4 + w/5+1, w /10-1, h/10-1);
+				g2.fillRect(w/4 + 4*w/10+1, h/4 + 3*w/10+1, w /10-1, h/10-1);
+			}
+			if(C1n == true){
+				g2.fillRect(w/4 +1, h/4+ w/10+1, w /10-1, h/10-1);
+				g2.fillRect(w/4 + w/10+1, h/4 + w/5+1, w /10-1, h/10-1);
+				g2.fillRect(w/4 + w/5+1, h/4 + 3*w/10+1, w /10-1, h/10-1);
+				g2.fillRect(w/4 + 3*w/10+1, h/4 + 4*w/10+1, w /10-1, h/10-1);
+			}
+			if(C2 == true){
+				g2.fillRect(w/4 + w/5+1, h/4 +1, w /10-1, h/10-1);
+				g2.fillRect(w/4 + 3*w/10+1, h/4 + w/10+1, w /10-1, h/10-1);
+				g2.fillRect(w/4 + 4*w/10+1, h/4 + w/5+1, w /10-1, h/10-1);
+			}
+			if(C2n == true){
+				g2.fillRect(w/4 +1, h/4 + h/5+1, w /10-1, h/10-1);
+				g2.fillRect(w/4 + w/10+1, h/4 + 3*h/10+1, w /10-1, h/10-1);
+				g2.fillRect(w/4 + w/5+1, h/4 +2* h/5+1, w /10-1, h/10-1);
+			}
+			if(C3 == true){
+				g2.fillRect(w/4 + 3*w/10+1, h/4 +1, w /10-1, h/10-1);
+				g2.fillRect(w/4 + 4*w/10+1, h/4 + w/10+1, w /10-1, h/10-1);
+			}
+			if(C3n == true){
+				g2.fillRect(w/4 +1, h/4 + 3*h/10+1, w /10-1, h/10-1);
+				g2.fillRect(w/4 + w/10+1, h/4 +2* h/5+1, w /10-1, h/10-1);
+			}
+			if(C4 == true){
+				g2.fillRect(w/4 + 4*w/10+1, h/4 +1, w /10-1, h/10-1);
+			}
+			if(C4n == true){
+				g2.fillRect(w/4 +1, h/4 +2* h/5+1, w /10-1, h/10-1);
+			}
 			//}
 		//if(showOS == true){//if(showOS == true){ //TODO suspicious
-//			if(hiLiOS == true){
-//				g2.setColor(new Color(255,255,0,aNr));
-//			}
-//			else{
-//				if(hiLiFB == true || hiLiCU == true){
-//					g2.setColor(new Color(255,255,0,10));
-//				}
-//				else{
-//					g2.setColor(new Color(255,255,0,aNr));
-//				}
-//			}
-
+			if(hiLiOS == true){
+				g2.setColor(new Color(255,255,0));
+			}
+			else{
+				if(hiLiFB == true || hiLiCU == true){
+					g2.setColor(new Color(255,255,0,10));
+				}
+				else{
+					g2.setColor(new Color(255,255,0,aNr));
+				}
+			}
+			if(O0 == true){
+				g2.fillRect(w/4+1, h/4+1, w /10-1, h/10-1);
+				g2.fillRect(w/4 + w/10+1, h/4 + h/10+1, w /10-1, h/10-1);
+				g2.fillRect(w/4 + w/5+1, h/4 + h/5+1, w /10-1, h/10-1);
+				g2.fillRect(w/4 + 3*w/10+1, h/4 + 3*h/10+1, w /10-1, h/10-1);
+				g2.fillRect(w/4 + 4*w/10+1, h/4 + 4*h/10+1, w /10-1, h/10-1);
+			}
+			if(O1 == true){
+				g2.fillRect(w/4 + w/10+1, h/4+1, w /10-1, h/10-1);
+				g2.fillRect(w/4 + w/5+1, h/4 + w/10+1, w /10-1, h/10-1);
+				g2.fillRect(w/4 + 3*w/10+1, h/4 + w/5+1, w /10-1, h/10-1);
+				g2.fillRect(w/4 + 4*w/10+1, h/4 + 3*w/10+1, w /10-1, h/10-1);
+			}
+			if(O1n == true){
+				g2.fillRect(w/4 +1, h/4+ w/10+1, w /10-1, h/10-1);
+				g2.fillRect(w/4 + w/10+1, h/4 + w/5+1, w /10-1, h/10-1);
+				g2.fillRect(w/4 + w/5+1, h/4 + 3*w/10+1, w /10-1, h/10-1);
+				g2.fillRect(w/4 + 3*w/10+1, h/4 + 4*w/10+1, w /10-1, h/10-1);
+			}
+			if(O2 == true){
+				g2.fillRect(w/4 + w/5+1, h/4 +1, w /10-1, h/10-1);
+				g2.fillRect(w/4 + 3*w/10+1, h/4 + w/10+1, w /10-1, h/10-1);
+				g2.fillRect(w/4 + 4*w/10+1, h/4 + w/5+1, w /10-1, h/10-1);
+			}
+			if(O2n == true){
+				g2.fillRect(w/4 +1, h/4 + h/5+1, w /10-1, h/10-1);
+				g2.fillRect(w/4 + w/10+1, h/4 + 3*h/10+1, w /10-1, h/10-1);
+				g2.fillRect(w/4 + w/5+1, h/4 +2* h/5+1, w /10-1, h/10-1);
+			}
+			if(O3 == true){
+				g2.fillRect(w/4 + 3*w/10+1, h/4 +1, w /10-1, h/10-1);
+				g2.fillRect(w/4 + 4*w/10+1, h/4 + w/10+1, w /10-1, h/10-1);
+			}
+			if(O3n == true){
+				g2.fillRect(w/4 +1, h/4 + 3*h/10+1, w /10-1, h/10-1);
+				g2.fillRect(w/4 + w/10+1, h/4 +2* h/5+1, w /10-1, h/10-1);
+			}
+			if(O4 == true){
+				g2.fillRect(w/4 + 4*w/10+1, h/4 +1, w /10-1, h/10-1);
+			}
+			if(O4n == true){
+				g2.fillRect(w/4 +1, h/4 +2* h/5+1, w /10-1, h/10-1);
+			}
 			//}
 	}
 		else if (wH == false){
 			//if(showFB == true){
-			if(hiLiFB == true){
-				g2.setColor(new Color(255,0,0,aNr));
-				if(l0 == true){
-					g2.fillRect(w/4+ 4*w/10+1, h/4+1, w /10-1, h/10-1);
-					g2.fillRect(w/4 + 3*w/10+1, h/4 + h/10+1, w /10-1, h/10-1);
-					g2.fillRect(w/4 + w/5+1, h/4 + h/5+1, w /10-1, h/10-1);
-					g2.fillRect(w/4 + w/10+1, h/4 + 3*h/10+1, w /10-1, h/10-1);
-					g2.fillRect(w/4 +1, h/4 + 4*h/10+1, w /10-1, h/10-1);
+			if(hiLiOS == true){
+				g2.setColor(new Color(255,255,0));
+			}
+			else{
+				if(hiLiFB == true || hiLiCU == true){
+					g2.setColor(new Color(255,255,0,10));
 				}
-				if(l1 == true){
-					g2.fillRect(w/4 + 3*w/10+1, h/4 +1, w /10-1, h/10-1);
-					g2.fillRect(w/4 + 2*w/10+1, h/4 + h/10+1, w /10-1, h/10-1);
-					g2.fillRect(w/4 + w/10+1, h/4 + 2*h/10+1, w /10-1, h/10-1);
-					g2.fillRect(w/4 +1, h/4 + 3*h/10+1, w /10-1, h/10-1);
-				}
-				if(l1n == true){
-					g2.fillRect(w/4 + 4*w/10+1, h/4 + h/10+1, w /10-1, h/10-1);
-					g2.fillRect(w/4 + 3*w/10+1, h/4 + h/5+1, w /10-1, h/10-1);
-					g2.fillRect(w/4 + 2*w/10+1, h/4 + 3*h/10+1, w /10-1, h/10-1);
-					g2.fillRect(w/4 +w/10+1, h/4 + 4*h/10+1, w /10-1, h/10-1);
-				}
-				if(l2 == true){
-					g2.fillRect(w/4 + 2*w/10+1, h/4 +1, w /10-1, h/10-1);
-					g2.fillRect(w/4 + w/10+1, h/4 + h/10+1, w /10-1, h/10-1);
-					g2.fillRect(w/4 +1, h/4 + 2*h/10+1, w /10-1, h/10-1);
-				}
-				if(l2n == true){
-					g2.fillRect(w/4 + 4*w/10+1, h/4 + 2*h/10+1, w /10-1, h/10-1);
-					g2.fillRect(w/4 + 3*w/10+1, h/4 + 3*h/10+1, w /10-1, h/10-1);
-					g2.fillRect(w/4 + 2*w/10+1, h/4 + 4*h/10+1, w /10-1, h/10-1);
-				}
-				if(l3 == true){
-					g2.fillRect(w/4 + w/10+1, h/4 +1, w /10-1, h/10-1);
-					g2.fillRect(w/4 +1, h/4 + h/10+1, w /10-1, h/10-1);
-				}
-				if(l3n == true){
-					g2.fillRect(w/4 + 4*w/10+1, h/4 + 3*h/10+1, w /10-1, h/10-1);
-					g2.fillRect(w/4 + 3*w/10+1, h/4 + 4*h/10+1, w /10-1, h/10-1);
-				}
-				if(l4 == true){
-					g2.fillRect(w/4 +1, h/4 +1, w /10-1, h/10-1);
-				}
-				if(l4n == true){
-					g2.fillRect(w/4 + 4*w/10+1, h/4 + 4*h/10+1, w /10-1, h/10-1);
+				else{
+					g2.setColor(new Color(255,255,0,aNr));
 				}
 			}
-			else if(hiLiCU == true){
-				g2.setColor(new Color(255,128,0,aNr));
-				if(lc0 == true){
-					g2.fillRect(w/4+ 4*w/10+1, h/4+1, w /10-1, h/10-1);
-					g2.fillRect(w/4 + 3*w/10+1, h/4 + h/10+1, w /10-1, h/10-1);
-					g2.fillRect(w/4 + w/5+1, h/4 + h/5+1, w /10-1, h/10-1);
-					g2.fillRect(w/4 + w/10+1, h/4 + 3*h/10+1, w /10-1, h/10-1);
-					g2.fillRect(w/4 +1, h/4 + 4*h/10+1, w /10-1, h/10-1);
-				}
-				if(lc1 == true){
-					g2.fillRect(w/4 + 3*w/10+1, h/4 +1, w /10-1, h/10-1);
-					g2.fillRect(w/4 + 2*w/10+1, h/4 + h/10+1, w /10-1, h/10-1);
-					g2.fillRect(w/4 + w/10+1, h/4 + 2*h/10+1, w /10-1, h/10-1);
-					g2.fillRect(w/4 +1, h/4 + 3*h/10+1, w /10-1, h/10-1);
-				}
-				if(lc1n == true){
-					g2.fillRect(w/4 + 4*w/10+1, h/4 + h/10+1, w /10-1, h/10-1);
-					g2.fillRect(w/4 + 3*w/10+1, h/4 + h/5+1, w /10-1, h/10-1);
-					g2.fillRect(w/4 + 2*w/10+1, h/4 + 3*h/10+1, w /10-1, h/10-1);
-					g2.fillRect(w/4 +w/10+1, h/4 + 4*h/10+1, w /10-1, h/10-1);
-				}
-				if(lc2 == true){
-					g2.fillRect(w/4 + 2*w/10+1, h/4 +1, w /10-1, h/10-1);
-					g2.fillRect(w/4 + w/10+1, h/4 + h/10+1, w /10-1, h/10-1);
-					g2.fillRect(w/4 +1, h/4 + 2*h/10+1, w /10-1, h/10-1);
-				}
-				if(lc2n == true){
-					g2.fillRect(w/4 + 4*w/10+1, h/4 + 2*h/10+1, w /10-1, h/10-1);
-					g2.fillRect(w/4 + 3*w/10+1, h/4 + 3*h/10+1, w /10-1, h/10-1);
-					g2.fillRect(w/4 + 2*w/10+1, h/4 + 4*h/10+1, w /10-1, h/10-1);
-				}
-				if(lc3 == true){
-					g2.fillRect(w/4 + w/10+1, h/4 +1, w /10-1, h/10-1);
-					g2.fillRect(w/4 +1, h/4 + h/10+1, w /10-1, h/10-1);
-				}
-				if(lc3n == true){
-					g2.fillRect(w/4 + 4*w/10+1, h/4 + 3*h/10+1, w /10-1, h/10-1);
-					g2.fillRect(w/4 + 3*w/10+1, h/4 + 4*h/10+1, w /10-1, h/10-1);
-				}
-				if(lc4 == true){
-					g2.fillRect(w/4 +1, h/4 +1, w /10-1, h/10-1);
-				}
-				if(lc4n == true){
-					g2.fillRect(w/4 + 4*w/10+1, h/4 + 4*h/10+1, w /10-1, h/10-1);
-				}
+			if(l0 == true){
+				g2.fillRect(w/4+ 4*w/10+1, h/4+1, w /10-1, h/10-1);
+				g2.fillRect(w/4 + 3*w/10+1, h/4 + h/10+1, w /10-1, h/10-1);
+				g2.fillRect(w/4 + w/5+1, h/4 + h/5+1, w /10-1, h/10-1);
+				g2.fillRect(w/4 + w/10+1, h/4 + 3*h/10+1, w /10-1, h/10-1);
+				g2.fillRect(w/4 +1, h/4 + 4*h/10+1, w /10-1, h/10-1);
 			}
-			else if(hiLiOS == true){
-				g2.setColor(new Color(255,255,0,aNr));
-				if(lo0 == true){
-					g2.fillRect(w/4+1, h/4+1, w /10-1, h/10-1);
-					g2.fillRect(w/4 + w/10+1, h/4 + h/10+1, w /10-1, h/10-1);
-					g2.fillRect(w/4 + w/5+1, h/4 + h/5+1, w /10-1, h/10-1);
-					g2.fillRect(w/4 + 3*w/10+1, h/4 + 3*h/10+1, w /10-1, h/10-1);
-					g2.fillRect(w/4 + 4*w/10+1, h/4 + 4*h/10+1, w /10-1, h/10-1);
-				}
-				if(lo1 == true){
-					g2.fillRect(w/4 + 3*w/10+1, h/4 +1, w /10-1, h/10-1);
-					g2.fillRect(w/4 + 2*w/10+1, h/4 + h/10+1, w /10-1, h/10-1);
-					g2.fillRect(w/4 + w/10+1, h/4 + 2*h/10+1, w /10-1, h/10-1);
-					g2.fillRect(w/4 +1, h/4 + 3*h/10+1, w /10-1, h/10-1);
-				}
-				if(lo1n == true){
-					g2.fillRect(w/4 + 4*w/10+1, h/4 + h/10+1, w /10-1, h/10-1);
-					g2.fillRect(w/4 + 3*w/10+1, h/4 + h/5+1, w /10-1, h/10-1);
-					g2.fillRect(w/4 + 2*w/10+1, h/4 + 3*h/10+1, w /10-1, h/10-1);
-					g2.fillRect(w/4 +w/10+1, h/4 + 4*h/10+1, w /10-1, h/10-1);
-				}
-				if(lo2 == true){
-					g2.fillRect(w/4 + 2*w/10+1, h/4 +1, w /10-1, h/10-1);
-					g2.fillRect(w/4 + w/10+1, h/4 + h/10+1, w /10-1, h/10-1);
-					g2.fillRect(w/4 +1, h/4 + 2*h/10+1, w /10-1, h/10-1);
-				}
-				if(lo2n == true){
-					g2.fillRect(w/4 + 4*w/10+1, h/4 + 2*h/10+1, w /10-1, h/10-1);
-					g2.fillRect(w/4 + 3*w/10+1, h/4 + 3*h/10+1, w /10-1, h/10-1);
-					g2.fillRect(w/4 + 2*w/10+1, h/4 + 4*h/10+1, w /10-1, h/10-1);
-				}
-				if(lo3 == true){
-					g2.fillRect(w/4 + w/10+1, h/4 +1, w /10-1, h/10-1);
-					g2.fillRect(w/4 +1, h/4 + h/10+1, w /10-1, h/10-1);
-				}
-				if(lo3n == true){
-					g2.fillRect(w/4 + 4*w/10+1, h/4 + 3*h/10+1, w /10-1, h/10-1);
-					g2.fillRect(w/4 + 3*w/10+1, h/4 + 4*h/10+1, w /10-1, h/10-1);
-				}
-				if(lo4 == true){
-					g2.fillRect(w/4 +1, h/4 +1, w /10-1, h/10-1);
-				}
-				if(lo4n == true){
-					g2.fillRect(w/4 + 4*w/10+1, h/4 + 4*h/10+1, w /10-1, h/10-1);
-				}
+			if(l1 == true){
+				g2.fillRect(w/4 + 3*w/10+1, h/4 +1, w /10-1, h/10-1);
+				g2.fillRect(w/4 + 2*w/10+1, h/4 + h/10+1, w /10-1, h/10-1);
+				g2.fillRect(w/4 + w/10+1, h/4 + 2*h/10+1, w /10-1, h/10-1);
+				g2.fillRect(w/4 +1, h/4 + 3*h/10+1, w /10-1, h/10-1);
 			}
-//			else{
-//				if(hiLiFB == true || hiLiCU == true){
-//					g2.setColor(new Color(255,255,0,10));
-//				}
-//				else{
-//					g2.setColor(new Color(255,255,0,aNr));
-//				}
-//			}
-
+			if(l1n == true){
+				g2.fillRect(w/4 + 4*w/10+1, h/4 + h/10+1, w /10-1, h/10-1);
+				g2.fillRect(w/4 + 3*w/10+1, h/4 + h/5+1, w /10-1, h/10-1);
+				g2.fillRect(w/4 + 2*w/10+1, h/4 + 3*h/10+1, w /10-1, h/10-1);
+				g2.fillRect(w/4 +w/10+1, h/4 + 4*h/10+1, w /10-1, h/10-1);
+			}
+			if(l2 == true){
+				g2.fillRect(w/4 + 2*w/10+1, h/4 +1, w /10-1, h/10-1);
+				g2.fillRect(w/4 + w/10+1, h/4 + h/10+1, w /10-1, h/10-1);
+				g2.fillRect(w/4 +1, h/4 + 2*h/10+1, w /10-1, h/10-1);
+			}
+			if(l2n == true){
+				g2.fillRect(w/4 + 4*w/10+1, h/4 + 2*h/10+1, w /10-1, h/10-1);
+				g2.fillRect(w/4 + 3*w/10+1, h/4 + 3*h/10+1, w /10-1, h/10-1);
+				g2.fillRect(w/4 + 2*w/10+1, h/4 + 4*h/10+1, w /10-1, h/10-1);
+			}
+			if(l3 == true){
+				g2.fillRect(w/4 + w/10+1, h/4 +1, w /10-1, h/10-1);
+				g2.fillRect(w/4 +1, h/4 + h/10+1, w /10-1, h/10-1);
+			}
+			if(l3n == true){
+				g2.fillRect(w/4 + 4*w/10+1, h/4 + 3*h/10+1, w /10-1, h/10-1);
+				g2.fillRect(w/4 + 3*w/10+1, h/4 + 4*h/10+1, w /10-1, h/10-1);
+			}
+			if(l4 == true){
+				g2.fillRect(w/4 +1, h/4 +1, w /10-1, h/10-1);
+			}
+			if(l4n == true){
+				g2.fillRect(w/4 + 4*w/10+1, h/4 + 4*h/10+1, w /10-1, h/10-1);
+			}
 			//}
 		//if(showCU == true){//if(showCU == true){ //TODO looks suspicious
-
-//			else{
-//				if(hiLiFB == true || hiLiOS == true){
-//					g2.setColor(new Color(255,128,0,10));
-//				}
-//				else{
-//					g2.setColor(new Color(255,128,0,aNr));
-//				}
-//			}
-
+			if(hiLiCU == true){
+				g2.setColor(new Color(255,128,0));
+			}
+			else{
+				if(hiLiFB == true || hiLiOS == true){
+					g2.setColor(new Color(255,128,0,10));
+				}
+				else{
+					g2.setColor(new Color(255,128,0,aNr));
+				}
+			}
+			if(lc0 == true){
+				g2.fillRect(w/4+ 4*w/10+1, h/4+1, w /10-1, h/10-1);
+				g2.fillRect(w/4 + 3*w/10+1, h/4 + h/10+1, w /10-1, h/10-1);
+				g2.fillRect(w/4 + w/5+1, h/4 + h/5+1, w /10-1, h/10-1);
+				g2.fillRect(w/4 + w/10+1, h/4 + 3*h/10+1, w /10-1, h/10-1);
+				g2.fillRect(w/4 +1, h/4 + 4*h/10+1, w /10-1, h/10-1);
+			}
+			if(lc1 == true){
+				g2.fillRect(w/4 + 3*w/10+1, h/4 +1, w /10-1, h/10-1);
+				g2.fillRect(w/4 + 2*w/10+1, h/4 + h/10+1, w /10-1, h/10-1);
+				g2.fillRect(w/4 + w/10+1, h/4 + 2*h/10+1, w /10-1, h/10-1);
+				g2.fillRect(w/4 +1, h/4 + 3*h/10+1, w /10-1, h/10-1);
+			}
+			if(lc1n == true){
+				g2.fillRect(w/4 + 4*w/10+1, h/4 + h/10+1, w /10-1, h/10-1);
+				g2.fillRect(w/4 + 3*w/10+1, h/4 + h/5+1, w /10-1, h/10-1);
+				g2.fillRect(w/4 + 2*w/10+1, h/4 + 3*h/10+1, w /10-1, h/10-1);
+				g2.fillRect(w/4 +w/10+1, h/4 + 4*h/10+1, w /10-1, h/10-1);
+			}
+			if(lc2 == true){
+				g2.fillRect(w/4 + 2*w/10+1, h/4 +1, w /10-1, h/10-1);
+				g2.fillRect(w/4 + w/10+1, h/4 + h/10+1, w /10-1, h/10-1);
+				g2.fillRect(w/4 +1, h/4 + 2*h/10+1, w /10-1, h/10-1);
+			}
+			if(lc2n == true){
+				g2.fillRect(w/4 + 4*w/10+1, h/4 + 2*h/10+1, w /10-1, h/10-1);
+				g2.fillRect(w/4 + 3*w/10+1, h/4 + 3*h/10+1, w /10-1, h/10-1);
+				g2.fillRect(w/4 + 2*w/10+1, h/4 + 4*h/10+1, w /10-1, h/10-1);
+			}
+			if(lc3 == true){
+				g2.fillRect(w/4 + w/10+1, h/4 +1, w /10-1, h/10-1);
+				g2.fillRect(w/4 +1, h/4 + h/10+1, w /10-1, h/10-1);
+			}
+			if(lc3n == true){
+				g2.fillRect(w/4 + 4*w/10+1, h/4 + 3*h/10+1, w /10-1, h/10-1);
+				g2.fillRect(w/4 + 3*w/10+1, h/4 + 4*h/10+1, w /10-1, h/10-1);
+			}
+			if(lc4 == true){
+				g2.fillRect(w/4 +1, h/4 +1, w /10-1, h/10-1);
+			}
+			if(lc4n == true){
+				g2.fillRect(w/4 + 4*w/10+1, h/4 + 4*h/10+1, w /10-1, h/10-1);
+			}
 			//}
 		//if(showOS == true){//if(showOS == true){ //TODO also looks suspicious
-//			if(hiLiOS == true){
-//				g2.setColor(new Color(255,255,0));
-//			}
-//			else{
-//				if(hiLiFB == true || hiLiCU == true){
-//					g2.setColor(new Color(255,255,0,10));
-//				}
-//				else{
-//					g2.setColor(new Color(255,255,0,aNr));
-//				}
-//			}
-
+			if(hiLiOS == true){
+				g2.setColor(new Color(255,255,0));
+			}
+			else{
+				if(hiLiFB == true || hiLiCU == true){
+					g2.setColor(new Color(255,255,0,10));
+				}
+				else{
+					g2.setColor(new Color(255,255,0,aNr));
+				}
+			}
+			if(lo0 == true){
+				g2.fillRect(w/4+1, h/4+1, w /10-1, h/10-1);
+				g2.fillRect(w/4 + w/10+1, h/4 + h/10+1, w /10-1, h/10-1);
+				g2.fillRect(w/4 + w/5+1, h/4 + h/5+1, w /10-1, h/10-1);
+				g2.fillRect(w/4 + 3*w/10+1, h/4 + 3*h/10+1, w /10-1, h/10-1);
+				g2.fillRect(w/4 + 4*w/10+1, h/4 + 4*h/10+1, w /10-1, h/10-1);
+			}
+			if(lo1 == true){
+				g2.fillRect(w/4 + 3*w/10+1, h/4 +1, w /10-1, h/10-1);
+				g2.fillRect(w/4 + 2*w/10+1, h/4 + h/10+1, w /10-1, h/10-1);
+				g2.fillRect(w/4 + w/10+1, h/4 + 2*h/10+1, w /10-1, h/10-1);
+				g2.fillRect(w/4 +1, h/4 + 3*h/10+1, w /10-1, h/10-1);
+			}
+			if(lo1n == true){
+				g2.fillRect(w/4 + 4*w/10+1, h/4 + h/10+1, w /10-1, h/10-1);
+				g2.fillRect(w/4 + 3*w/10+1, h/4 + h/5+1, w /10-1, h/10-1);
+				g2.fillRect(w/4 + 2*w/10+1, h/4 + 3*h/10+1, w /10-1, h/10-1);
+				g2.fillRect(w/4 +w/10+1, h/4 + 4*h/10+1, w /10-1, h/10-1);
+			}
+			if(lo2 == true){
+				g2.fillRect(w/4 + 2*w/10+1, h/4 +1, w /10-1, h/10-1);
+				g2.fillRect(w/4 + w/10+1, h/4 + h/10+1, w /10-1, h/10-1);
+				g2.fillRect(w/4 +1, h/4 + 2*h/10+1, w /10-1, h/10-1);
+			}
+			if(lo2n == true){
+				g2.fillRect(w/4 + 4*w/10+1, h/4 + 2*h/10+1, w /10-1, h/10-1);
+				g2.fillRect(w/4 + 3*w/10+1, h/4 + 3*h/10+1, w /10-1, h/10-1);
+				g2.fillRect(w/4 + 2*w/10+1, h/4 + 4*h/10+1, w /10-1, h/10-1);
+			}
+			if(lo3 == true){
+				g2.fillRect(w/4 + w/10+1, h/4 +1, w /10-1, h/10-1);
+				g2.fillRect(w/4 +1, h/4 + h/10+1, w /10-1, h/10-1);
+			}
+			if(lo3n == true){
+				g2.fillRect(w/4 + 4*w/10+1, h/4 + 3*h/10+1, w /10-1, h/10-1);
+				g2.fillRect(w/4 + 3*w/10+1, h/4 + 4*h/10+1, w /10-1, h/10-1);
+			}
+			if(lo4 == true){
+				g2.fillRect(w/4 +1, h/4 +1, w /10-1, h/10-1);
+			}
+			if(lo4n == true){
+				g2.fillRect(w/4 + 4*w/10+1, h/4 + 4*h/10+1, w /10-1, h/10-1);
+			}
 			//}
 
 		}

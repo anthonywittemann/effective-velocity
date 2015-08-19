@@ -1180,7 +1180,6 @@ public class MainC extends JPanel implements ActionListener, MouseListener, Mous
 				showORhide = false;
 			}
 		}
-		
 		if(e.getSource() == fastBButton){
 			String q = pitchLbl.getText();
 			if(q == "Pitch: Fastball    "){
@@ -1233,7 +1232,6 @@ public class MainC extends JPanel implements ActionListener, MouseListener, Mous
 			wasFB = false; wasCU = false;  wasOS = true;
 			fillInBoxes();
 		}
-		
 		if(aNr < 255){
 			aNr ++;
 			if(aNr == 255){
@@ -1274,9 +1272,18 @@ public class MainC extends JPanel implements ActionListener, MouseListener, Mous
 		
 		//for filling boxes
 		if(wH == true){ //for righties
-			//if(showFB == true){
-			if(hiLiFB == true){
-				g2.setColor(new Color(255,0,0,aNr));
+			if(showFB == true){
+				if(hiLiFB == true){
+					g2.setColor(new Color(255,0,0));
+				}
+				else{
+					if(hiLiCU == true || hiLiOS == true){
+						g2.setColor(new Color(255,0,0,10));
+					}
+					else{
+						g2.setColor(new Color(255,0,0,aNr));
+					}
+				}
 				if(r0 == true){
 					g2.fillRect(w/4+1, h/4+1, w /10-1, h/10-1);
 					g2.fillRect(w/4 + w/10+1, h/4 + h/10+1, w /10-1, h/10-1);
@@ -1321,8 +1328,18 @@ public class MainC extends JPanel implements ActionListener, MouseListener, Mous
 					g2.fillRect(w/4 +1, h/4 +2* h/5+1, w /10-1, h/10-1);
 				}
 			}
-			else if(hiLiCU == true){
-				g2.setColor(new Color(255,128,0,aNr));
+			if(showCU == true){//if(showCU == true){ //TODO suspicious
+				if(hiLiCU == true){
+					g2.setColor(new Color(255,128,0));
+				}
+				else{
+					if(hiLiFB == true || hiLiOS == true){
+						g2.setColor(new Color(255,128,0,10));
+					}
+					else{
+						g2.setColor(new Color(255,128,0,aNr));
+					}
+				}
 				if(C0 == true){
 					g2.fillRect(w/4+1, h/4+1, w /10-1, h/10-1);
 					g2.fillRect(w/4 + w/10+1, h/4 + h/10+1, w /10-1, h/10-1);
@@ -1367,8 +1384,18 @@ public class MainC extends JPanel implements ActionListener, MouseListener, Mous
 					g2.fillRect(w/4 +1, h/4 +2* h/5+1, w /10-1, h/10-1);
 				}
 			}
-			else if(hiLiOS == true){
-				g2.setColor(new Color(255,255,0,aNr));
+			if(showOS == true){//if(showOS == true){ //TODO suspicious
+				if(hiLiOS == true){
+					g2.setColor(new Color(255,255,0));
+				}
+				else{
+					if(hiLiFB == true || hiLiCU == true){
+						g2.setColor(new Color(255,255,0,10));
+					}
+					else{
+						g2.setColor(new Color(255,255,0,aNr));
+					}
+				}
 				if(O0 == true){
 					g2.fillRect(w/4+1, h/4+1, w /10-1, h/10-1);
 					g2.fillRect(w/4 + w/10+1, h/4 + h/10+1, w /10-1, h/10-1);
@@ -1413,49 +1440,20 @@ public class MainC extends JPanel implements ActionListener, MouseListener, Mous
 					g2.fillRect(w/4 +1, h/4 +2* h/5+1, w /10-1, h/10-1);
 				}
 			}
-//			else{
-//				if(hiLiCU == true || hiLiOS == true){
-//					g2.setColor(new Color(255,0,0,10));
-//				}
-//				else{
-//					g2.setColor(new Color(255,0,0,aNr));
-//				}
-//			}
-
-			//}
-		//if(showCU == true){//if(showCU == true){ //TODO suspicious
-//			if(hiLiCU == true){
-//				g2.setColor(new Color(255,128,0));
-//			}
-//			else{
-//				if(hiLiFB == true || hiLiOS == true){
-//					g2.setColor(new Color(255,128,0,10));
-//				}
-//				else{
-//					g2.setColor(new Color(255,128,0,aNr));
-//				}
-//			}
-
-			//}
-		//if(showOS == true){//if(showOS == true){ //TODO suspicious
-//			if(hiLiOS == true){
-//				g2.setColor(new Color(255,255,0,aNr));
-//			}
-//			else{
-//				if(hiLiFB == true || hiLiCU == true){
-//					g2.setColor(new Color(255,255,0,10));
-//				}
-//				else{
-//					g2.setColor(new Color(255,255,0,aNr));
-//				}
-//			}
-
-			//}
-	}
+		}
 		else if (wH == false){
-			//if(showFB == true){
-			if(hiLiFB == true){
-				g2.setColor(new Color(255,0,0,aNr));
+			if(showFB == true){
+				if(hiLiOS == true){
+					g2.setColor(new Color(255,255,0));
+				}
+				else{
+					if(hiLiFB == true || hiLiCU == true){
+						g2.setColor(new Color(255,255,0,10));
+					}
+					else{
+						g2.setColor(new Color(255,255,0,aNr));
+					}
+				}
 				if(l0 == true){
 					g2.fillRect(w/4+ 4*w/10+1, h/4+1, w /10-1, h/10-1);
 					g2.fillRect(w/4 + 3*w/10+1, h/4 + h/10+1, w /10-1, h/10-1);
@@ -1500,8 +1498,18 @@ public class MainC extends JPanel implements ActionListener, MouseListener, Mous
 					g2.fillRect(w/4 + 4*w/10+1, h/4 + 4*h/10+1, w /10-1, h/10-1);
 				}
 			}
-			else if(hiLiCU == true){
-				g2.setColor(new Color(255,128,0,aNr));
+			if(showCU == true){//if(showCU == true){ //TODO looks suspicious
+				if(hiLiCU == true){
+					g2.setColor(new Color(255,128,0));
+				}
+				else{
+					if(hiLiFB == true || hiLiOS == true){
+						g2.setColor(new Color(255,128,0,10));
+					}
+					else{
+						g2.setColor(new Color(255,128,0,aNr));
+					}
+				}
 				if(lc0 == true){
 					g2.fillRect(w/4+ 4*w/10+1, h/4+1, w /10-1, h/10-1);
 					g2.fillRect(w/4 + 3*w/10+1, h/4 + h/10+1, w /10-1, h/10-1);
@@ -1546,8 +1554,18 @@ public class MainC extends JPanel implements ActionListener, MouseListener, Mous
 					g2.fillRect(w/4 + 4*w/10+1, h/4 + 4*h/10+1, w /10-1, h/10-1);
 				}
 			}
-			else if(hiLiOS == true){
-				g2.setColor(new Color(255,255,0,aNr));
+			if(showOS == true){//if(showOS == true){ //TODO also looks suspicious
+				if(hiLiOS == true){
+					g2.setColor(new Color(255,255,0));
+				}
+				else{
+					if(hiLiFB == true || hiLiCU == true){
+						g2.setColor(new Color(255,255,0,10));
+					}
+					else{
+						g2.setColor(new Color(255,255,0,aNr));
+					}
+				}
 				if(lo0 == true){
 					g2.fillRect(w/4+1, h/4+1, w /10-1, h/10-1);
 					g2.fillRect(w/4 + w/10+1, h/4 + h/10+1, w /10-1, h/10-1);
@@ -1592,42 +1610,6 @@ public class MainC extends JPanel implements ActionListener, MouseListener, Mous
 					g2.fillRect(w/4 + 4*w/10+1, h/4 + 4*h/10+1, w /10-1, h/10-1);
 				}
 			}
-//			else{
-//				if(hiLiFB == true || hiLiCU == true){
-//					g2.setColor(new Color(255,255,0,10));
-//				}
-//				else{
-//					g2.setColor(new Color(255,255,0,aNr));
-//				}
-//			}
-
-			//}
-		//if(showCU == true){//if(showCU == true){ //TODO looks suspicious
-
-//			else{
-//				if(hiLiFB == true || hiLiOS == true){
-//					g2.setColor(new Color(255,128,0,10));
-//				}
-//				else{
-//					g2.setColor(new Color(255,128,0,aNr));
-//				}
-//			}
-
-			//}
-		//if(showOS == true){//if(showOS == true){ //TODO also looks suspicious
-//			if(hiLiOS == true){
-//				g2.setColor(new Color(255,255,0));
-//			}
-//			else{
-//				if(hiLiFB == true || hiLiCU == true){
-//					g2.setColor(new Color(255,255,0,10));
-//				}
-//				else{
-//					g2.setColor(new Color(255,255,0,aNr));
-//				}
-//			}
-
-			//}
 
 		}
 	}
