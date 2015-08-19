@@ -962,7 +962,7 @@ public class MainC extends JPanel implements ActionListener, MouseListener, Mous
 		previousPitchLbl.setText("PP: ");
 	}
 	
-	//for button clicks - TODO check this out
+	//for button clicks
 	public void actionPerformed(ActionEvent e) {
 		if(showORhide == true){
 			nextPitchLbl.setVisible(true);
