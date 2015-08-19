@@ -572,7 +572,7 @@ public class MainC extends JPanel implements ActionListener, MouseListener, Mous
 	}
 	
 	
-	//for lefties - working
+	//for lefties - NOT WORKING TODO
 	protected void FZ4L(){
 		EVfactor = 4;
 		if(wasFB == true){

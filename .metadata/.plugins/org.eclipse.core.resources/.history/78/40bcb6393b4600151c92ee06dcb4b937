@@ -554,7 +554,7 @@ public class MainC extends JPanel implements ActionListener, MouseListener, Mous
 		EVfactor = -4;
 		if(wasFB == true){
 			r4 = true; r3 = true; r2 = true; r1 = true;
-			C2n = true; C3n = true; C4n = true;
+			C2n = true; C3n = true; C4n = true; C1n = true;
 			AllOSTrue();
 			cULbl.setForeground(Color.red); fBLbl.setForeground(Color.red); osLbl.setForeground(Color.red);
 		}
@@ -572,7 +572,7 @@ public class MainC extends JPanel implements ActionListener, MouseListener, Mous
 	}
 	
 	
-	//for lefties - working
+	//for lefties - NOT WORKING TODO
 	protected void FZ4L(){
 		EVfactor = 4;
 		if(wasFB == true){
