@@ -14,22 +14,19 @@ public class MainC extends JPanel implements ActionListener, MouseListener, Mous
 	private int cly; //click location y
 	private int mx; //mouse location x
 	private int my; //mouse location y
-	
 	private boolean wH; //for a batter True if righty, false if lefty
-	
 	private JButton rH = new JButton();
 	private JButton lH = new JButton();
 	private JButton nB = new JButton();
 	private JPanel batterty = new JPanel();
 	private JPanel nextPitchInfo = new JPanel();
-	private boolean showORhide = true;
-	private JToggleButton showORhideButton = new JToggleButton(">", showORhide);
+	private boolean soh = true;
+	private JToggleButton showORhide = new JToggleButton(">", soh);
 	private JLabel nextPitch = new JLabel();
 	private JLabel fB = new JLabel("FastBall");
 	private JLabel cU = new JLabel("Change-Up");
 	private JLabel oS = new JLabel("Off Speed");
-	private int aNr = 200; //alpha value for changing transparency of highlighted boxes
-	
+	private int aNr = 200;
 	//booleans for highlighting different boxes
 	private boolean r0;
 	private boolean r1;
@@ -85,7 +82,6 @@ public class MainC extends JPanel implements ActionListener, MouseListener, Mous
 	private boolean  O3n;
 	private boolean  O2n;
 	private boolean  O1n;
-	
 	//info about pitches
 	private int EVfactor;
 	private JPanel SouthPanel = new JPanel();
@@ -171,8 +167,8 @@ public class MainC extends JPanel implements ActionListener, MouseListener, Mous
 		gb.weightx = .18; gb.weighty = 1;
 		oS.setFont(new Font("Lucida", Font.PLAIN, 20)); oS.setForeground(new Color(255,152,0));oS.setVisible(false); nextPitchInfo.add(oS, gb);
 		gb.weightx = .2; gb.weighty = 1; gb.anchor = GridBagConstraints.LINE_END;
-		showORhideButton.setFont(new Font("Lucida", Font.BOLD, 20)); nextPitchInfo.add(showORhideButton, gb);
-		showORhideButton.addActionListener(this);
+		showORhide.setFont(new Font("Lucida", Font.BOLD, 20)); nextPitchInfo.add(showORhide, gb);
+		showORhide.addActionListener(this);
 		nextPitchInfo.setSize(getWidth(), 9 * getHeight()/10);
 		SouthPanel.add(nextPitchInfo, BorderLayout.SOUTH); 
 		//pitch and previous pitch info
@@ -363,7 +359,7 @@ public class MainC extends JPanel implements ActionListener, MouseListener, Mous
 		cly = e.getY();
 		if(clx > getWidth()/4 && cly > getHeight()/4 && clx < 3*getWidth()/4 && cly < 3 * getWidth()/4){
 			bTP.setVisible(true); bTP.requestFocus();
-			showORhide = false; 
+			soh = false; 
 			setBooleansFalse();
 		}
 		//for righty	
@@ -387,21 +383,21 @@ public class MainC extends JPanel implements ActionListener, MouseListener, Mous
 			r4n = true; r3n = true; r2n = true;
 			AllCUTrue();
 			AllOSTrue();
-			nextPitchInfo.setVisible(true); showORhide = true;
+			nextPitchInfo.setVisible(true); soh = true;
 			cU.setForeground(Color.red); oS.setForeground(Color.red); fB.setForeground(Color.red);
 		}
 		else if(wasCU == true){
 			r2 = true; r3 = true; r4 = true;
 			C4n = true; C3n = true; C2n = true; 
 			AllOSTrue();
-			nextPitchInfo.setVisible(true); showORhide = true;
+			nextPitchInfo.setVisible(true); soh = true;
 			fB.setForeground(Color.red); oS.setForeground(Color.red);cU.setForeground(Color.red);
 		}
 		else{	
 			AllFBTrue();
 			C2 = true; C3 = true; C4 = true;
 			O2n = true; O3n = true; O4n  = true;
-			nextPitchInfo.setVisible(true); showORhide = true;
+			nextPitchInfo.setVisible(true); soh = true;
 			cU.setForeground(Color.red); fB.setForeground(Color.red);oS.setForeground(Color.red);
 		}
 	}	
@@ -411,20 +407,20 @@ public class MainC extends JPanel implements ActionListener, MouseListener, Mous
 			r4n = true; r3n = true;
 			C2n = true; C3n = true; C4n = true; C1n = true;  
 			AllOSTrue();
-			nextPitchInfo.setVisible(true); showORhide = true;
+			nextPitchInfo.setVisible(true); soh = true;
 			cU.setForeground(Color.red); oS.setForeground(Color.red); fB.setForeground(Color.red);
 		}
 		else if(wasCU == true){
 			r1 = true; r2 = true; r3 = true; r4 = true;
 			C4n = true; C3n = true;
 			AllOSTrue();
-			nextPitchInfo.setVisible(true); showORhide = true;
+			nextPitchInfo.setVisible(true); soh = true;
 			fB.setForeground(Color.red); oS.setForeground(Color.red);cU.setForeground(Color.red);
 		}
 		else{	
 			AllFBTrue();
 			C1 = true; C2 = true; C3 = true; C4 = true;
-			nextPitchInfo.setVisible(true); showORhide = true;
+			nextPitchInfo.setVisible(true); soh = true;
 			cU.setForeground(Color.red); fB.setForeground(Color.red);oS.setForeground(Color.red);
 		}
 	}	
@@ -434,19 +430,19 @@ public class MainC extends JPanel implements ActionListener, MouseListener, Mous
 			r4n = true; 
 			C2n = true; C3n = true; C4n = true; C1n = true; C0 = true; 
 			AllOSTrue();
-			nextPitchInfo.setVisible(true); showORhide = true;
+			nextPitchInfo.setVisible(true); soh = true;
 			cU.setForeground(Color.red); oS.setForeground(Color.red); fB.setForeground(Color.red);
 		}
 		else if(wasCU == true){
 			r0 = true; r1 = true; r2 = true; r3 = true; r4 = true;
 			O3 = true; O2 = true; O1 = true; O0 = true; O1n = true; O2n = true; O3n = true; O4n = true;
-			nextPitchInfo.setVisible(true); showORhide = true;
+			nextPitchInfo.setVisible(true); soh = true;
 			fB.setForeground(Color.red); oS.setForeground(Color.red);cU.setForeground(new Color(255,128,0));
 		}
 		else{	
 			AllFBTrue();
 			C0 = true; C1 = true; C2 = true; C3 = true; C4 = true;
-			nextPitchInfo.setVisible(true); showORhide = true;
+			nextPitchInfo.setVisible(true); soh = true;
 			cU.setForeground(Color.red); fB.setForeground(Color.red);oS.setForeground(new Color(255,128,0));
 		}
 	}
@@ -455,19 +451,19 @@ public class MainC extends JPanel implements ActionListener, MouseListener, Mous
 		if(wasFB == true){
 			C1 = true; C2n = true; C3n = true; C4n = true; C1n = true; C0 = true; 
 			AllOSTrue();
-			nextPitchInfo.setVisible(true); showORhide = true;
+			nextPitchInfo.setVisible(true); soh = true;
 			cU.setForeground(Color.red); oS.setForeground(Color.red);fB.setForeground(new Color(255,128,0));
 		}
 		else if(wasCU == true){
 			r1n = true; r0 = true; r1 = true; r2 = true; r3 = true; r4 = true;
 			O2 = true; O1 = true; O0 = true; O1n = true; O2n = true; O3n = true; O4n = true;
-			nextPitchInfo.setVisible(true); showORhide = true;
+			nextPitchInfo.setVisible(true); soh = true;
 			fB.setForeground(Color.red); oS.setForeground(Color.red);cU.setForeground(new Color(255,128,0));
 		}
 		else{	
 			AllFBTrue();
 			C1n = true; C0 = true; C1 = true; C2 = true; C3 = true; C4 = true;
-			nextPitchInfo.setVisible(true); showORhide = true;
+			nextPitchInfo.setVisible(true); soh = true;
 			cU.setForeground(Color.red); fB.setForeground(Color.red); oS.setForeground(new Color(255,128,0));
 		}
 	}	
@@ -476,19 +472,19 @@ public class MainC extends JPanel implements ActionListener, MouseListener, Mous
 		if(wasFB == true){
 			C2n = true; C3n = true; C4n = true; C1n = true;  
 			AllOSTrue();
-			nextPitchInfo.setVisible(true); showORhide = true;
+			nextPitchInfo.setVisible(true); soh = true;
 			cU.setForeground(Color.red); oS.setForeground(Color.red); fB.setForeground(new Color(255,128,0));
 		}
 		else if(wasCU == true){
 			r2n = true; r1n = true; r0 = true; r1 = true; r2 = true; r3 = true; r4 = true;
 			O2 = true; O1 = true; O0 = true; O1n = true; O2n = true; O3n = true; O4n = true;
-			nextPitchInfo.setVisible(true); showORhide = true;
+			nextPitchInfo.setVisible(true); soh = true;
 			fB.setForeground(Color.red); oS.setForeground(Color.red); cU.setForeground(new Color(255,128,0));
 		}
 		else{	
 			AllFBTrue();
 			C0 = true; C1 = true; C2 = true; C3 = true; C4 = true;
-			nextPitchInfo.setVisible(true); showORhide = true;
+			nextPitchInfo.setVisible(true); soh = true;
 			cU.setForeground(Color.red); fB.setForeground(Color.red); oS.setForeground(new Color(255,128,0));
 		}
 	}	
@@ -498,19 +494,19 @@ public class MainC extends JPanel implements ActionListener, MouseListener, Mous
 			r4 = true;
 			C2n = true; C3n = true; C4n = true; C1n = true;
 			AllOSTrue();
-			nextPitchInfo.setVisible(true); showORhide = true;
+			nextPitchInfo.setVisible(true); soh = true;
 			cU.setForeground(Color.red); fB.setForeground(Color.red); oS.setForeground(Color.red);
 		}
 		else if(wasCU == true){
 			r3n = true; r2n = true; r1n = true; r0 = true; r1 = true;r2 = true;r3 = true;r4 = true;
 			O0 = true;O4n = true;O3n = true;O2n = true;O1n = true;
-			nextPitchInfo.setVisible(true); showORhide = true;
+			nextPitchInfo.setVisible(true); soh = true;
 			fB.setForeground(Color.red); oS.setForeground(Color.red);cU.setForeground(new Color(255,128,0));
 		}
 		else{
 			AllFBTrue();
 			C1n = true; C0 = true; C1 = true; C2 = true; C3 = true; C4 = true;
-			nextPitchInfo.setVisible(true); showORhide = true;
+			nextPitchInfo.setVisible(true); soh = true;
 			cU.setForeground(Color.red); fB.setForeground(Color.red);oS.setForeground(new Color(255,128,0));
 		}
 	}
@@ -520,19 +516,19 @@ public class MainC extends JPanel implements ActionListener, MouseListener, Mous
 			r4 = true; r3 = true;
 			C2n = true; C3n = true; C4n = true; C1n = true; 
 			AllOSTrue();
-			nextPitchInfo.setVisible(true); showORhide = true;
+			nextPitchInfo.setVisible(true); soh = true;
 			cU.setForeground(Color.red); fB.setForeground(Color.red); oS.setForeground(Color.red);
 		}
 		else if(wasCU == true){
 			AllFBTrue();
 			O3 = true;O2 = true;O1 = true;O0 = true;O4n = true;O3n = true;O2n = true;O1n = true;
-			nextPitchInfo.setVisible(true); showORhide = true;
+			nextPitchInfo.setVisible(true); soh = true;
 			fB.setForeground(Color.red); oS.setForeground(Color.red);cU.setForeground(new Color(255,128,0));
 		}
 		else{
 			AllFBTrue();
 			AllCUTrue();
-			nextPitchInfo.setVisible(true); showORhide = true;
+			nextPitchInfo.setVisible(true); soh = true;
 			cU.setForeground(Color.red); fB.setForeground(Color.red);oS.setForeground(new Color(255,128,0));
 		}
 	}
@@ -542,19 +538,19 @@ public class MainC extends JPanel implements ActionListener, MouseListener, Mous
 			r4 = true; r3 = true; r2 = true;
 			C2n = true; C3n = true; C4n = true; C1n = true; C0 = true;
 			AllOSTrue();
-			nextPitchInfo.setVisible(true); showORhide = true;
+			nextPitchInfo.setVisible(true); soh = true;
 			cU.setForeground(Color.red); fB.setForeground(Color.red); oS.setForeground(Color.red);
 		}
 		else if(wasCU == true){
 			AllFBTrue();
 			O2 = true;O1 = true;O0 = true;O4n = true;O3n = true;O2n = true;O1n = true;
-			nextPitchInfo.setVisible(true); showORhide = true;
+			nextPitchInfo.setVisible(true); soh = true;
 			fB.setForeground(Color.red); oS.setForeground(Color.red);cU.setForeground(new Color(255,128,0));
 		}
 		else{
 			AllFBTrue();
 			AllCUTrue();
-			nextPitchInfo.setVisible(true); showORhide = true;
+			nextPitchInfo.setVisible(true); soh = true;
 			cU.setForeground(Color.red); fB.setForeground(Color.red);oS.setForeground(new Color(255,128,0));
 		}
 	}
@@ -564,19 +560,19 @@ public class MainC extends JPanel implements ActionListener, MouseListener, Mous
 			r4 = true; r3 = true; r2 = true; r1 = true;
 			C2n = true; C3n = true; C4n = true; C1n = true;
 			AllOSTrue();
-			nextPitchInfo.setVisible(true); showORhide = true;
+			nextPitchInfo.setVisible(true); soh = true;
 			cU.setForeground(Color.red); fB.setForeground(Color.red); oS.setForeground(Color.red);
 		}
 		else if(wasCU == true){
 			AllFBTrue();
 			O2 = true;O1 = true;O0 = true;O4n = true;O3n = true;O2n = true;O1n = true;
-			nextPitchInfo.setVisible(true); showORhide = true;
+			nextPitchInfo.setVisible(true); soh = true;
 			fB.setForeground(Color.red); oS.setForeground(Color.red);cU.setForeground(new Color(255,128,0));
 		}
 		else{
 			AllFBTrue();
 			AllCUTrue();
-			nextPitchInfo.setVisible(true); showORhide = true;
+			nextPitchInfo.setVisible(true); soh = true;
 			cU.setForeground(Color.red); fB.setForeground(Color.red);oS.setForeground(new Color(255,128,0));
 		}
 	}
@@ -587,21 +583,21 @@ public class MainC extends JPanel implements ActionListener, MouseListener, Mous
 			l4n = true; l3n = true; l2n = true;
 			AllCUTrue();
 			AllOSTrue();
-			nextPitchInfo.setVisible(true); showORhide = true;
+			nextPitchInfo.setVisible(true); soh = true;
 			cU.setForeground(Color.red); oS.setForeground(Color.red); fB.setForeground(Color.red);
 		}
 		else if(wasCU == true){
 			l2 = true; l3 = true; l4 = true;
 			lc4n = true; lc3n = true; lc2n = true; 
 			AllOSTrue();
-			nextPitchInfo.setVisible(true); showORhide = true;
+			nextPitchInfo.setVisible(true); soh = true;
 			fB.setForeground(Color.red); oS.setForeground(Color.red);cU.setForeground(Color.red);
 		}
 		else{	
 			AllFBTrue();
 			C2 = true; C3 = true; C4 = true;
 			lo2n = true; lo3n = true; lo4n = true;
-			nextPitchInfo.setVisible(true); showORhide = true;
+			nextPitchInfo.setVisible(true); soh = true;
 			cU.setForeground(Color.red); fB.setForeground(Color.red);oS.setForeground(Color.red);
 		}
 	}
@@ -611,20 +607,20 @@ public class MainC extends JPanel implements ActionListener, MouseListener, Mous
 			l4n = true; l3n = true;
 			lc2n = true; lc3n = true; lc4n = true; lc1n = true;  
 			AllOSTrue();
-			nextPitchInfo.setVisible(true); showORhide = true;
+			nextPitchInfo.setVisible(true); soh = true;
 			cU.setForeground(Color.red); oS.setForeground(Color.red); fB.setForeground(Color.red);
 		}
 		else if(wasCU == true){
 			l1 = true; l2 = true; l3 = true; l4 = true;
 			lc4n = true; lc3n = true;
 			AllOSTrue();
-			nextPitchInfo.setVisible(true); showORhide = true;
+			nextPitchInfo.setVisible(true); soh = true;
 			fB.setForeground(Color.red); oS.setForeground(Color.red);cU.setForeground(Color.red);
 		}
 		else{	
 			AllFBTrue();
 			lc1 = true; lc2 = true; lc3 = true; lc4 = true;
-			nextPitchInfo.setVisible(true); showORhide = true;
+			nextPitchInfo.setVisible(true); soh = true;
 			cU.setForeground(Color.red); fB.setForeground(Color.red);oS.setForeground(Color.red);
 		}
 	}
@@ -634,19 +630,19 @@ public class MainC extends JPanel implements ActionListener, MouseListener, Mous
 			l4n = true; 
 			lc2n = true; lc3n = true; lc4n = true; lc1n = true; lc0 = true; 
 			AllOSTrue();
-			nextPitchInfo.setVisible(true); showORhide = true;
+			nextPitchInfo.setVisible(true); soh = true;
 			cU.setForeground(Color.red); oS.setForeground(Color.red); fB.setForeground(Color.red);
 		}
 		else if(wasCU == true){
 			l0 = true; l1 = true; l2 = true; l3 = true; l4 = true;
 			lo3 = true; lo2 = true; lo1 = true; lo0 = true; lo1n = true; lo2n = true; lo3n = true; lo4n = true;
-			nextPitchInfo.setVisible(true); showORhide = true;
+			nextPitchInfo.setVisible(true); soh = true;
 			fB.setForeground(Color.red); oS.setForeground(Color.red);cU.setForeground(new Color(255,128,0));
 		}
 		else{	
 			AllFBTrue();
 			lc0 = true; lc1 = true; lc2 = true; lc3 = true; lc4 = true;
-			nextPitchInfo.setVisible(true); showORhide = true;
+			nextPitchInfo.setVisible(true); soh = true;
 			cU.setForeground(Color.red); fB.setForeground(Color.red);oS.setForeground(new Color(255,128,0));
 		}
 	}
@@ -655,19 +651,19 @@ public class MainC extends JPanel implements ActionListener, MouseListener, Mous
 		if(wasFB == true){
 			lc2n = true; lc3n = true; lc4n = true; lc1n = true; lc0 = true; 
 			AllOSTrue();
-			nextPitchInfo.setVisible(true); showORhide = true;
+			nextPitchInfo.setVisible(true); soh = true;
 			cU.setForeground(Color.red); oS.setForeground(Color.red);fB.setForeground(new Color(255,128,0));
 		}
 		else if(wasCU == true){
 			l1n = true; l0 = true; l1 = true; l2 = true; l3 = true; l4 = true;
 			lo2 = true; lo1 = true; lo0 = true; lo1n = true; lo2n = true; lo3n = true; lo4n = true;
-			nextPitchInfo.setVisible(true); showORhide = true;
+			nextPitchInfo.setVisible(true); soh = true;
 			fB.setForeground(Color.red); oS.setForeground(Color.red);cU.setForeground(new Color(255,128,0));
 		}
 		else{	
 			AllFBTrue();
 			lc1n = true; lc0 = true; lc1 = true; lc2 = true; lc3 = true; lc4 = true;
-			nextPitchInfo.setVisible(true); showORhide = true;
+			nextPitchInfo.setVisible(true); soh = true;
 			cU.setForeground(Color.red); fB.setForeground(Color.red); oS.setForeground(new Color(255,128,0));
 		}
 	}
@@ -676,19 +672,19 @@ public class MainC extends JPanel implements ActionListener, MouseListener, Mous
 		if(wasFB == true){
 			lc2n = true; lc3n = true; lc4n = true; lc1n = true; 
 			AllOSTrue();
-			nextPitchInfo.setVisible(true); showORhide = true;
+			nextPitchInfo.setVisible(true); soh = true;
 			cU.setForeground(Color.red); oS.setForeground(Color.red); fB.setForeground(new Color(255,128,0));
 		}
 		else if(wasCU == true){
 			l2n = true; l1n = true; l0 = true; l1 = true; l2 = true; l3 = true; l4 = true;
 			lo1 = true; lo0 = true; lo1n = true; lo2n = true; lo3n = true; lo4n = true;
-			nextPitchInfo.setVisible(true); showORhide = true;
+			nextPitchInfo.setVisible(true); soh = true;
 			fB.setForeground(Color.red); oS.setForeground(Color.red); cU.setForeground(new Color(255,128,0));
 		}
 		else{	
 			AllFBTrue();
 			C0 = true; C1 = true; C2 = true; C3 = true; C4 = true;
-			nextPitchInfo.setVisible(true); showORhide = true;
+			nextPitchInfo.setVisible(true); soh = true;
 			cU.setForeground(Color.red); fB.setForeground(Color.red); oS.setForeground(new Color(255,128,0));
 		}
 	}
@@ -698,19 +694,19 @@ public class MainC extends JPanel implements ActionListener, MouseListener, Mous
 			l4 = true;
 			lc1n = true; lc2n = true; lc3n = true; lc4n = true; 
 			AllOSTrue();
-			nextPitchInfo.setVisible(true); showORhide = true;
+			nextPitchInfo.setVisible(true); soh = true;
 			cU.setForeground(Color.red); fB.setForeground(Color.red); oS.setForeground(Color.red);
 		}
 		else if(wasCU == true){
 			l3n = true; l2n = true; l1n = true; l0 = true; l1 = true;l2 = true;l3 = true;l4 = true;
 			lo0 = true;lo4n = true;lo3n = true;lo2n = true;lo1n = true;
-			nextPitchInfo.setVisible(true); showORhide = true;
+			nextPitchInfo.setVisible(true); soh = true;
 			fB.setForeground(Color.red); oS.setForeground(Color.red);cU.setForeground(new Color(255,128,0));
 		}
 		else{
 			AllFBTrue();
 			C1n = true; C0 = true; C1 = true; C2 = true; C3 = true; C4 = true;
-			nextPitchInfo.setVisible(true); showORhide = true;
+			nextPitchInfo.setVisible(true); soh = true;
 			cU.setForeground(Color.red); fB.setForeground(Color.red);oS.setForeground(new Color(255,128,0));
 		}
 	}
@@ -720,19 +716,19 @@ public class MainC extends JPanel implements ActionListener, MouseListener, Mous
 			l4 = true; l3 = true;
 			lc2n = true; lc3n = true; lc4n = true; 
 			AllOSTrue();
-			nextPitchInfo.setVisible(true); showORhide = true;
+			nextPitchInfo.setVisible(true); soh = true;
 			cU.setForeground(Color.red); fB.setForeground(Color.red); oS.setForeground(Color.red);
 		}
 		else if(wasCU == true){
 			AllFBTrue();
 			lo2 = true;lo1 = true;lo0 = true;lo4n = true;lo3n = true;lo2n = true;lo1n = true;
-			nextPitchInfo.setVisible(true); showORhide = true;
+			nextPitchInfo.setVisible(true); soh = true;
 			fB.setForeground(Color.red); oS.setForeground(Color.red);cU.setForeground(new Color(255,128,0));
 		}
 		else{
 			AllFBTrue();
 			AllCUTrue();
-			nextPitchInfo.setVisible(true); showORhide = true;
+			nextPitchInfo.setVisible(true); soh = true;
 			cU.setForeground(Color.red); fB.setForeground(Color.red);oS.setForeground(new Color(255,128,0));
 		}
 	}
@@ -742,19 +738,19 @@ public class MainC extends JPanel implements ActionListener, MouseListener, Mous
 			l4 = true; l3 = true; l2 = true;
 			lc2n = true; lc3n = true; lc4n = true; 
 			AllOSTrue();
-			nextPitchInfo.setVisible(true); showORhide = true;
+			nextPitchInfo.setVisible(true); soh = true;
 			cU.setForeground(Color.red); fB.setForeground(Color.red); oS.setForeground(Color.red);
 		}
 		else if(wasCU == true){
 			AllFBTrue();
 			lo1 = true;lo0 = true;lo4n = true;lo3n = true;lo2n = true;lo1n = true;
-			nextPitchInfo.setVisible(true); showORhide = true;
+			nextPitchInfo.setVisible(true); soh = true;
 			fB.setForeground(Color.red); oS.setForeground(Color.red);cU.setForeground(new Color(255,128,0));
 		}
 		else{
 			AllFBTrue();
 			AllCUTrue();
-			nextPitchInfo.setVisible(true); showORhide = true;
+			nextPitchInfo.setVisible(true); soh = true;
 			cU.setForeground(Color.red); fB.setForeground(Color.red);oS.setForeground(new Color(255,128,0));
 		}
 	}
@@ -764,19 +760,19 @@ public class MainC extends JPanel implements ActionListener, MouseListener, Mous
 			l4 = true; l3 = true; l2 = true; l1 = true;
 			lc2n = true; lc3n = true; lc4n = true;
 			AllOSTrue();
-			nextPitchInfo.setVisible(true); showORhide = true;
+			nextPitchInfo.setVisible(true); soh = true;
 			cU.setForeground(Color.red); fB.setForeground(Color.red); oS.setForeground(Color.red);
 		}
 		else if(wasCU == true){
 			AllFBTrue();
 			lo2 = true;lo1 = true;lo0 = true;lo4n = true;lo3n = true;lo2n = true;lo1n = true;
-			nextPitchInfo.setVisible(true); showORhide = true;
+			nextPitchInfo.setVisible(true); soh = true;
 			fB.setForeground(Color.red); oS.setForeground(Color.red);cU.setForeground(new Color(255,128,0));
 		}
 		else{
 			AllFBTrue();
 			AllCUTrue();
-			nextPitchInfo.setVisible(true); showORhide = true;
+			nextPitchInfo.setVisible(true); soh = true;
 			cU.setForeground(Color.red); fB.setForeground(Color.red);oS.setForeground(new Color(255,128,0));
 		}
 	}
@@ -1134,7 +1130,7 @@ public class MainC extends JPanel implements ActionListener, MouseListener, Mous
 	
 	//for button clicks
 	public void actionPerformed(ActionEvent e) {
-		if(showORhide == true){
+		if(soh == true){
 			nextPitch.setVisible(true);
 			fB.setVisible(true);
 			cU.setVisible(true);
@@ -1164,14 +1160,14 @@ public class MainC extends JPanel implements ActionListener, MouseListener, Mous
 			lH.setVisible(false);
 			nB.setVisible(true);
 		}
-		if(e.getSource() == showORhideButton){
-			if(showORhide == false){
-				showORhideButton.setText(">");
-				showORhide = true;
+		if(e.getSource() == showORhide){
+			if(soh == false){
+				showORhide.setText(">");
+				soh = true;
 			}
 			else{
-				showORhideButton.setText("<");
-				showORhide = false;
+				showORhide.setText("<");
+				soh = false;
 			}
 		}
 		if(e.getSource() == fastB){

@@ -85,7 +85,6 @@ public class MainC extends JPanel implements ActionListener, MouseListener, Mous
 	private boolean  O3n;
 	private boolean  O2n;
 	private boolean  O1n;
-	
 	//info about pitches
 	private int EVfactor;
 	private JPanel SouthPanel = new JPanel();
