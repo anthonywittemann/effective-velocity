@@ -194,6 +194,64 @@ public class MainC extends JPanel implements ActionListener, MouseListener, Mous
 		javax.swing.Timer t = new javax.swing.Timer(50,this);
 		t.start();
 	}
+	
+	//TODO - why are all these ifs blank?????
+	protected void setBooleansFalse(){
+		r0 = false;
+		r1 = false;
+		r2 = false;
+		r3 = false;
+		r4 = false;
+		r1n = false;
+		r2n = false;
+		r3n = false;
+		r4n = false;
+		l0 = false;
+		l1 = false;
+		l2 = false;
+		l3 = false;
+		l4 = false;
+		l1n = false;
+		l2n = false;
+		l3n = false;
+		l4n = false;
+		C4 = false;
+		C3 = false;
+		C2 = false;
+		C1 = false;
+		C0 = false;
+		C4n = false;
+		C3n = false;
+		C2n = false;
+		C1n = false;
+		O4 = false;
+		O3 = false;
+		O2 = false;
+		O1 = false;
+		O0 = false;
+		O4n = false;
+		O3n = false;
+		O2n = false;
+		O1n = false;
+		lc0 = false;
+		lc1 = false;
+		lc2 = false;
+		lc3 = false;
+		lc4 = false;
+		lc1n = false;
+		lc2n = false;
+		lc3n = false;
+		lc4n = false;
+		lo0 = false;
+		lo1 = false;
+		lo2 = false;
+		lo3 = false;
+		lo4 = false;
+		lo1n = false;
+		lo2n = false;
+		lo3n = false;
+		lo4n = false;
+	}
 
 	
 	public void mousePressed(MouseEvent e) {

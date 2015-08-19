@@ -194,6 +194,170 @@ public class MainC extends JPanel implements ActionListener, MouseListener, Mous
 		javax.swing.Timer t = new javax.swing.Timer(50,this);
 		t.start();
 	}
+	protected void setBooleansFalse(){
+		if(C4 == true){
+		}
+		if(C3 == true){
+		}
+		if(C2 == true){
+		}
+		if(C1 == true){
+		}
+		if(C0 == true){
+		}
+		if(C4n == true){
+		}
+		if(C3n == true){
+		}
+		if(C2n == true){
+		}
+		if(C1n == true){
+		}
+		if(O4 == true){
+		}
+		if(O3 == true){
+		}
+		if(O2 == true){
+		}
+		if(O1 == true){
+		}
+		if(O0 == true){
+		}
+		if(O4n == true){
+		}
+		if(O3n == true){
+		}
+		if(O2n == true){
+		}
+		if(O1n == true){
+		}
+		if(r0 == true){
+		}
+		if(r1 == true){
+		}
+		if(r2 == true){
+		}
+		if(r3 == true){
+		}
+		if(r4 == true){
+		}
+		if(r1n == true){
+		}
+		if(r2n == true){
+		}
+		if(r3n == true){
+		}
+		if(r4n == true){
+		}
+		if(l0 == true){
+		}
+		if(l1 == true){
+		}
+		if(l2 == true){
+		}
+		if(l3 == true){
+		}
+		if(l4 == true){
+		}
+		if(l1n == true){
+		}
+		if(l2n == true){
+		}
+		if(l3n == true){
+		}
+		if(l4n == true){
+		}
+		if(lc0 == true){
+		}
+		if(lc1 == true){
+		}
+		if(lc2 == true){
+		}
+		if(lc3 == true){
+		}
+		if(lc4 == true){
+		}
+		if(lc1n == true){
+		}
+		if(lc2n == true){
+		}
+		if(lc3n == true){
+		}
+		if(lc4n == true){
+		}
+		if(lo0 == true){
+		}
+		if(lo1 == true){
+		}
+		if(lo2 == true){
+		}
+		if(lo3 == true){
+		}
+		if(lo4 == true){
+		}
+		if(lo1n == true){
+		}
+		if(lo2n == true){
+		}
+		if(lo3n == true){
+		}
+		if(lo4n == true){
+		}
+		r0 = false;
+		r1 = false;
+		r2 = false;
+		r3 = false;
+		r4 = false;
+		r1n = false;
+		r2n = false;
+		r3n = false;
+		r4n = false;
+		l0 = false;
+		l1 = false;
+		l2 = false;
+		l3 = false;
+		l4 = false;
+		l1n = false;
+		l2n = false;
+		l3n = false;
+		l4n = false;
+		C4 = false;
+		C3 = false;
+		C2 = false;
+		C1 = false;
+		C0 = false;
+		C4n = false;
+		C3n = false;
+		C2n = false;
+		C1n = false;
+		O4 = false;
+		O3 = false;
+		O2 = false;
+		O1 = false;
+		O0 = false;
+		O4n = false;
+		O3n = false;
+		O2n = false;
+		O1n = false;
+		lc0 = false;
+		lc1 = false;
+		lc2 = false;
+		lc3 = false;
+		lc4 = false;
+		lc1n = false;
+		lc2n = false;
+		lc3n = false;
+		lc4n = false;
+		lo0 = false;
+		lo1 = false;
+		lo2 = false;
+		lo3 = false;
+		lo4 = false;
+		lo1n = false;
+		lo2n = false;
+		lo3n = false;
+		lo4n = false;
+	}
 
 	
 	public void mousePressed(MouseEvent e) {
@@ -202,7 +366,7 @@ public class MainC extends JPanel implements ActionListener, MouseListener, Mous
 		if(clx > getWidth()/4 && cly > getHeight()/4 && clx < 3*getWidth()/4 && cly < 3 * getWidth()/4){
 			pitchTypePanel.setVisible(true); pitchTypePanel.requestFocus();
 			showORhide = false; 
-			setALLBsF(); //TODO investigate
+			setBooleansFalse();
 		}
 		//for righty	
 	}
@@ -591,16 +755,10 @@ public class MainC extends JPanel implements ActionListener, MouseListener, Mous
 		nextPitchInfoPanel.setVisible(true); showORhide = true;
 	}
 	
-	//looks good
+	//TODO verify the correct zones are being called for lefties - related TODO why OS pitches for lefties don't show up
 	protected void fillInBoxes(){
 		int w = getWidth(); int h = getHeight();
 		//works for righties
-		// -----------EV ZONES------------
-		//   | 0  | 1  | 2  | 3  | 4  |
-		//   | -1 | 0  | 1  | 2  | 3  |
-		//   | -2 | -1 | 0  | 1  | 2  |
-		//   | -3 | -2 | -1 | 0  | 1  |
-		//   | -4 | -3 | -2 | -1 | 0  |
 		if(wH == true){
 			if(clx > w/4 && cly > h/4){ 
 				//column 1
@@ -722,12 +880,6 @@ public class MainC extends JPanel implements ActionListener, MouseListener, Mous
 			}
 		}
 		//for lefties TODO verify it mirrors righties
-		// -----------EV ZONES------------
-		//   | 4  | 3  | 2  | 1  | 0  |
-		//   | 3  | 2  | 1  | 0  | -1 |
-		//   | 2  | 1  | 0  | -1 | -2 |
-		//   | 1  | 0  | -1 | -2 | -3 |
-		//   | 0  | -1 | -2 | -3 | -4 |
 		else{
 			if(clx > w/4 && cly > h/4){ 
 				//first column
@@ -965,8 +1117,7 @@ public class MainC extends JPanel implements ActionListener, MouseListener, Mous
 		previousPitchLbl.setText("PP: ");
 	}
 	
-	//for button clicks - TODO investigate
-	//TODO verify the correct zones are being called for lefties - related TODO why OS pitches for lefties don't show up
+	//for button clicks
 	public void actionPerformed(ActionEvent e) {
 		if(showORhide == true){
 			nextPitchLbl.setVisible(true);
