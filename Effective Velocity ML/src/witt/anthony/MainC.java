@@ -1009,14 +1009,11 @@ public class MainC extends JPanel implements ActionListener, MouseListener, Mous
 		}
 		
 		if(e.getSource() == fastBButton){
-			String q = pitchLbl.getText();
-			if(q == "Pitch: Fastball    "){
+			if(wasFB){
 				previousPitchLbl.setText("PP: FB");
-			}
-			else if(q == "Pitch: Change Up    "){
+			} else if(wasCU){
 				previousPitchLbl.setText("PP: CU");
-			}
-			else if(q == "Pitch: Off Speed    "){
+			} else{
 				previousPitchLbl.setText("PP: OS");
 			}
 			pitchLbl.setText("Pitch: Fastball    ");
@@ -1027,14 +1024,11 @@ public class MainC extends JPanel implements ActionListener, MouseListener, Mous
 
 		}
 		else if(e.getSource() == changeU){
-			String q = pitchLbl.getText();
-			if(q == "Pitch: Fastball    "){
+			if(wasFB){
 				previousPitchLbl.setText("PP: FB");
-			}
-			else if(q == "Pitch: Change Up    "){
+			} else if(wasCU){
 				previousPitchLbl.setText("PP: CU");
-			}
-			else if(q == "Pitch: Off Speed    "){
+			} else{
 				previousPitchLbl.setText("PP: OS");
 			}
 			pitchLbl.setForeground(new Color(255,128,0));
@@ -1044,14 +1038,11 @@ public class MainC extends JPanel implements ActionListener, MouseListener, Mous
 			fillInBoxes();
 		}
 		else if(e.getSource() == offSpeed){
-			String q = pitchLbl.getText();
-			if(q == "Pitch: Fastball    "){
+			if(wasFB){
 				previousPitchLbl.setText("PP: FB");
-			}
-			else if(q == "Pitch: Change Up    "){
+			} else if(wasCU){
 				previousPitchLbl.setText("PP: CU");
-			}
-			else if(q == "Pitch: Off Speed    "){
+			} else{
 				previousPitchLbl.setText("PP: OS");
 			}
 			pitchLbl.setForeground(new Color(255,255,0));

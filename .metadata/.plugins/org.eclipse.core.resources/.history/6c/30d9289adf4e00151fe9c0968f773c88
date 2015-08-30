@@ -20,6 +20,7 @@ public class MainC extends JPanel implements ActionListener, MouseListener, Mous
 	private JButton rHButton = new JButton();
 	private JButton lHButton = new JButton();
 	private JButton newBatterButton = new JButton();
+	private JLabel instructionsLbl = new JLabel();
 	private JPanel battertyPanel = new JPanel();
 	private JPanel nextPitchInfoPanel = new JPanel();
 	private boolean showORhide = true;
@@ -102,8 +103,7 @@ public class MainC extends JPanel implements ActionListener, MouseListener, Mous
 	private boolean wasFB;
 	private boolean wasCU;
 	private boolean wasOS;
-	
-	//private boolean showFB; //TODO never defined
+	//for highlighting boxes
 	private boolean hiLiFB;
 	private boolean hiLiCU;
 	private boolean hiLiOS;
@@ -125,7 +125,7 @@ public class MainC extends JPanel implements ActionListener, MouseListener, Mous
 		GridBagConstraints c = new GridBagConstraints();
 		c.weightx = .2; c.weighty = 1; 	 rHButton.setVisible(false);	
 		rHButton.setFont(new Font("Lucida", Font.BOLD, 48)); rHButton.setText("Righty"); battertyPanel.add(rHButton, c); 
-		c.weightx = .4; c.weighty = 1;
+		c.weightx = .4; c.weighty = 1; 
 		newBatterButton.setFont(new Font("Lucida", Font.BOLD, 54)); newBatterButton.setText("New Batter"); battertyPanel.add(newBatterButton, c); 
 		c.weightx = .2; c.weighty = 1;lHButton.setVisible(false);
 		lHButton.setFont(new Font("Lucida", Font.BOLD, 48)); lHButton.setText("Lefty"); battertyPanel.add(lHButton, c);
@@ -141,6 +141,9 @@ public class MainC extends JPanel implements ActionListener, MouseListener, Mous
 		changeU.setFont(new Font("Lucida", Font.PLAIN, 36)); changeU.addActionListener(this); pitchTypePanel.add(changeU, gi);
 		gi.weightx = .25; gi.weighty = 1;
 		offSpeed.setFont(new Font("Lucida", Font.PLAIN, 36)); offSpeed.addActionListener(this); pitchTypePanel.add(offSpeed, gi);
+		//TODO add instructions at the appropriate time - after batter is righty/lefty, before location is clicked
+//		instructionsLbl.setVisible(false);
+//		instructionsLbl.setFont(new Font("Lucida", Font.PLAIN, 24)); instructionsLbl.setForeground(new Color(255,70,0)); instructionsLbl.setText("Click on the location of the pitch"); battertyPanel.add(instructionsLbl, c);
 		TopPanel.add(pitchTypePanel); pitchTypePanel.setBackground(new Color(0,0,0,0)); pitchTypePanel.setVisible(false);
 		this.add(TopPanel, BorderLayout.NORTH);
 		
@@ -158,7 +161,7 @@ public class MainC extends JPanel implements ActionListener, MouseListener, Mous
 	//	gr.weightx = .8; gr.weighty = 1;
 		
 		
-		//TODO add Panel with log of Pitches
+		//TODO add Panel with log of Pitches, instructions on how to hover mouse over pitch types
 
 		SouthPanel.add(PitchLogPanel, BorderLayout.NORTH);
 		//Bottom Info
@@ -195,170 +198,6 @@ public class MainC extends JPanel implements ActionListener, MouseListener, Mous
 		javax.swing.Timer t = new javax.swing.Timer(50,this);
 		t.start();
 	}
-	protected void setBooleansFalse(){
-		if(C4 == true){
-		}
-		if(C3 == true){
-		}
-		if(C2 == true){
-		}
-		if(C1 == true){
-		}
-		if(C0 == true){
-		}
-		if(C4n == true){
-		}
-		if(C3n == true){
-		}
-		if(C2n == true){
-		}
-		if(C1n == true){
-		}
-		if(O4 == true){
-		}
-		if(O3 == true){
-		}
-		if(O2 == true){
-		}
-		if(O1 == true){
-		}
-		if(O0 == true){
-		}
-		if(O4n == true){
-		}
-		if(O3n == true){
-		}
-		if(O2n == true){
-		}
-		if(O1n == true){
-		}
-		if(r0 == true){
-		}
-		if(r1 == true){
-		}
-		if(r2 == true){
-		}
-		if(r3 == true){
-		}
-		if(r4 == true){
-		}
-		if(r1n == true){
-		}
-		if(r2n == true){
-		}
-		if(r3n == true){
-		}
-		if(r4n == true){
-		}
-		if(l0 == true){
-		}
-		if(l1 == true){
-		}
-		if(l2 == true){
-		}
-		if(l3 == true){
-		}
-		if(l4 == true){
-		}
-		if(l1n == true){
-		}
-		if(l2n == true){
-		}
-		if(l3n == true){
-		}
-		if(l4n == true){
-		}
-		if(lc0 == true){
-		}
-		if(lc1 == true){
-		}
-		if(lc2 == true){
-		}
-		if(lc3 == true){
-		}
-		if(lc4 == true){
-		}
-		if(lc1n == true){
-		}
-		if(lc2n == true){
-		}
-		if(lc3n == true){
-		}
-		if(lc4n == true){
-		}
-		if(lo0 == true){
-		}
-		if(lo1 == true){
-		}
-		if(lo2 == true){
-		}
-		if(lo3 == true){
-		}
-		if(lo4 == true){
-		}
-		if(lo1n == true){
-		}
-		if(lo2n == true){
-		}
-		if(lo3n == true){
-		}
-		if(lo4n == true){
-		}
-		r0 = false;
-		r1 = false;
-		r2 = false;
-		r3 = false;
-		r4 = false;
-		r1n = false;
-		r2n = false;
-		r3n = false;
-		r4n = false;
-		l0 = false;
-		l1 = false;
-		l2 = false;
-		l3 = false;
-		l4 = false;
-		l1n = false;
-		l2n = false;
-		l3n = false;
-		l4n = false;
-		C4 = false;
-		C3 = false;
-		C2 = false;
-		C1 = false;
-		C0 = false;
-		C4n = false;
-		C3n = false;
-		C2n = false;
-		C1n = false;
-		O4 = false;
-		O3 = false;
-		O2 = false;
-		O1 = false;
-		O0 = false;
-		O4n = false;
-		O3n = false;
-		O2n = false;
-		O1n = false;
-		lc0 = false;
-		lc1 = false;
-		lc2 = false;
-		lc3 = false;
-		lc4 = false;
-		lc1n = false;
-		lc2n = false;
-		lc3n = false;
-		lc4n = false;
-		lo0 = false;
-		lo1 = false;
-		lo2 = false;
-		lo3 = false;
-		lo4 = false;
-		lo1n = false;
-		lo2n = false;
-		lo3n = false;
-		lo4n = false;
-	}
 
 	
 	public void mousePressed(MouseEvent e) {
@@ -367,7 +206,7 @@ public class MainC extends JPanel implements ActionListener, MouseListener, Mous
 		if(clx > getWidth()/4 && cly > getHeight()/4 && clx < 3*getWidth()/4 && cly < 3 * getWidth()/4){
 			pitchTypePanel.setVisible(true); pitchTypePanel.requestFocus();
 			showORhide = false; 
-			setBooleansFalse();
+			setALLBsF();
 		}
 		//for righty	
 	}
@@ -384,29 +223,32 @@ public class MainC extends JPanel implements ActionListener, MouseListener, Mous
 		C4 = true; C3 = true; C2 = true; C1 = true; C0 = true; C4n = true; C3n = true; C2n = true; C1n = true;
 	}
 	
+	// ===============================================================================================
+	// ------------------------------ LOGIC FOR WHICH BOXES TO FILL ----------------------------------
+	// ===============================================================================================
+	
+	//for righties - working
 	protected void FillZone4R(){
 		EVfactor = 4;
 		if(wasFB == true){
 			r4n = true; r3n = true; r2n = true;
 			AllCUTrue();
 			AllOSTrue();
-			nextPitchInfoPanel.setVisible(true); showORhide = true;
 			cULbl.setForeground(Color.red); osLbl.setForeground(Color.red); fBLbl.setForeground(Color.red);
 		}
 		else if(wasCU == true){
 			r2 = true; r3 = true; r4 = true;
 			C4n = true; C3n = true; C2n = true; 
 			AllOSTrue();
-			nextPitchInfoPanel.setVisible(true); showORhide = true;
 			fBLbl.setForeground(Color.red); osLbl.setForeground(Color.red);cULbl.setForeground(Color.red);
 		}
 		else{ //wasOS == true	
 			AllFBTrue();
 			C2 = true; C3 = true; C4 = true;
 			O2n = true; O3n = true; O4n  = true;
-			nextPitchInfoPanel.setVisible(true); showORhide = true;
 			cULbl.setForeground(Color.red); fBLbl.setForeground(Color.red);osLbl.setForeground(Color.red);
 		}
+		nextPitchInfoPanel.setVisible(true); showORhide = true;
 	}	
 	protected void FillZone3R(){ 
 		EVfactor = 3;
@@ -414,22 +256,20 @@ public class MainC extends JPanel implements ActionListener, MouseListener, Mous
 			r4n = true; r3n = true;
 			C2n = true; C3n = true; C4n = true; C1n = true;  
 			AllOSTrue();
-			nextPitchInfoPanel.setVisible(true); showORhide = true;
 			cULbl.setForeground(Color.red); osLbl.setForeground(Color.red); fBLbl.setForeground(Color.red);
 		}
 		else if(wasCU == true){
 			r1 = true; r2 = true; r3 = true; r4 = true;
 			C4n = true; C3n = true;
 			AllOSTrue();
-			nextPitchInfoPanel.setVisible(true); showORhide = true;
 			fBLbl.setForeground(Color.red); osLbl.setForeground(Color.red);cULbl.setForeground(Color.red);
 		}
 		else{	//wasOS == true
 			AllFBTrue();
 			C1 = true; C2 = true; C3 = true; C4 = true;
-			nextPitchInfoPanel.setVisible(true); showORhide = true;
 			cULbl.setForeground(Color.red); fBLbl.setForeground(Color.red);osLbl.setForeground(Color.red);
 		}
+		nextPitchInfoPanel.setVisible(true); showORhide = true;
 	}	
 	protected void FillZone2R(){
 		EVfactor = 2;
@@ -437,63 +277,57 @@ public class MainC extends JPanel implements ActionListener, MouseListener, Mous
 			r4n = true; 
 			C2n = true; C3n = true; C4n = true; C1n = true; C0 = true; 
 			AllOSTrue();
-			nextPitchInfoPanel.setVisible(true); showORhide = true;
 			cULbl.setForeground(Color.red); osLbl.setForeground(Color.red); fBLbl.setForeground(Color.red);
 		}
 		else if(wasCU == true){
 			r0 = true; r1 = true; r2 = true; r3 = true; r4 = true;
 			O3 = true; O2 = true; O1 = true; O0 = true; O1n = true; O2n = true; O3n = true; O4n = true;
-			nextPitchInfoPanel.setVisible(true); showORhide = true;
 			fBLbl.setForeground(Color.red); osLbl.setForeground(Color.red);cULbl.setForeground(new Color(255,128,0));
 		}
 		else{	
 			AllFBTrue(); //wasOS == true
 			C0 = true; C1 = true; C2 = true; C3 = true; C4 = true;
-			nextPitchInfoPanel.setVisible(true); showORhide = true;
 			cULbl.setForeground(Color.red); fBLbl.setForeground(Color.red);osLbl.setForeground(new Color(255,128,0));
 		}
+		nextPitchInfoPanel.setVisible(true); showORhide = true;
 	}
 	protected void FillZone1R(){
 		EVfactor = 1;
 		if(wasFB == true){
 			C1 = true; C2n = true; C3n = true; C4n = true; C1n = true; C0 = true; 
 			AllOSTrue();
-			nextPitchInfoPanel.setVisible(true); showORhide = true;
 			cULbl.setForeground(Color.red); osLbl.setForeground(Color.red);fBLbl.setForeground(new Color(255,128,0));
 		}
 		else if(wasCU == true){
 			r1n = true; r0 = true; r1 = true; r2 = true; r3 = true; r4 = true;
 			O2 = true; O1 = true; O0 = true; O1n = true; O2n = true; O3n = true; O4n = true;
-			nextPitchInfoPanel.setVisible(true); showORhide = true;
 			fBLbl.setForeground(Color.red); osLbl.setForeground(Color.red);cULbl.setForeground(new Color(255,128,0));
 		}
 		else{	//wasOS == true
 			AllFBTrue(); 
 			C1n = true; C0 = true; C1 = true; C2 = true; C3 = true; C4 = true;
-			nextPitchInfoPanel.setVisible(true); showORhide = true;
 			cULbl.setForeground(Color.red); fBLbl.setForeground(Color.red); osLbl.setForeground(new Color(255,128,0));
 		}
+		nextPitchInfoPanel.setVisible(true); showORhide = true;
 	}	
 	protected void FillZone0R(){
 		EVfactor = 0;
 		if(wasFB == true){
 			C2n = true; C3n = true; C4n = true; C1n = true;  
 			AllOSTrue();
-			nextPitchInfoPanel.setVisible(true); showORhide = true;
 			cULbl.setForeground(Color.red); osLbl.setForeground(Color.red); fBLbl.setForeground(new Color(255,128,0));
 		}
 		else if(wasCU == true){
 			r2n = true; r1n = true; r0 = true; r1 = true; r2 = true; r3 = true; r4 = true;
 			O2 = true; O1 = true; O0 = true; O1n = true; O2n = true; O3n = true; O4n = true;
-			nextPitchInfoPanel.setVisible(true); showORhide = true;
 			fBLbl.setForeground(Color.red); osLbl.setForeground(Color.red); cULbl.setForeground(new Color(255,128,0));
 		}
 		else{	//wasOS == true
 			AllFBTrue();
 			C0 = true; C1 = true; C2 = true; C3 = true; C4 = true;
-			nextPitchInfoPanel.setVisible(true); showORhide = true;
 			cULbl.setForeground(Color.red); fBLbl.setForeground(Color.red); osLbl.setForeground(new Color(255,128,0));
 		}
+		nextPitchInfoPanel.setVisible(true); showORhide = true;
 	}	
 	protected void FillZone1Rn(){
 		EVfactor = -1;
@@ -501,112 +335,105 @@ public class MainC extends JPanel implements ActionListener, MouseListener, Mous
 			r4 = true;
 			C2n = true; C3n = true; C4n = true; C1n = true;
 			AllOSTrue();
-			nextPitchInfoPanel.setVisible(true); showORhide = true;
 			cULbl.setForeground(Color.red); fBLbl.setForeground(Color.red); osLbl.setForeground(Color.red);
 		}
 		else if(wasCU == true){
 			r3n = true; r2n = true; r1n = true; r0 = true; r1 = true;r2 = true;r3 = true;r4 = true;
 			O0 = true;O4n = true;O3n = true;O2n = true;O1n = true;
-			nextPitchInfoPanel.setVisible(true); showORhide = true;
 			fBLbl.setForeground(Color.red); osLbl.setForeground(Color.red);cULbl.setForeground(new Color(255,128,0));
 		}
 		else{ //wasOS == true
 			AllFBTrue();
 			C1n = true; C0 = true; C1 = true; C2 = true; C3 = true; C4 = true;
-			nextPitchInfoPanel.setVisible(true); showORhide = true;
 			cULbl.setForeground(Color.red); fBLbl.setForeground(Color.red);osLbl.setForeground(new Color(255,128,0));
 		}
+		nextPitchInfoPanel.setVisible(true); showORhide = true;
 	}
 	protected void FillZone2Rn(){
 		EVfactor = -2;
 		if(wasFB == true){
 			r4 = true; r3 = true;
-			C2n = true; C3n = true; C4n = true; C1n = true; 
+			C2n = true; C3n = true; C4n = true;
 			AllOSTrue();
-			nextPitchInfoPanel.setVisible(true); showORhide = true;
 			cULbl.setForeground(Color.red); fBLbl.setForeground(Color.red); osLbl.setForeground(Color.red);
 		}
 		else if(wasCU == true){
 			AllFBTrue();
-			O3 = true;O2 = true;O1 = true;O0 = true;O4n = true;O3n = true;O2n = true;O1n = true;
-			nextPitchInfoPanel.setVisible(true); showORhide = true;
+			O2 = true;O1 = true;O0 = true;O4n = true;O3n = true;O2n = true;O1n = true;
 			fBLbl.setForeground(Color.red); osLbl.setForeground(Color.red);cULbl.setForeground(new Color(255,128,0));
 		}
 		else{ //wasOS == true
 			AllFBTrue();
 			AllCUTrue();
-			nextPitchInfoPanel.setVisible(true); showORhide = true;
 			cULbl.setForeground(Color.red); fBLbl.setForeground(Color.red);osLbl.setForeground(new Color(255,128,0));
 		}
+		nextPitchInfoPanel.setVisible(true); showORhide = true;
 	}
 	protected void FillZone3Rn(){
 		EVfactor = -3;
 		if(wasFB == true){
 			r4 = true; r3 = true; r2 = true;
-			C2n = true; C3n = true; C4n = true; C1n = true; C0 = true;
+			C2n = true; C3n = true; C4n = true;
 			AllOSTrue();
-			nextPitchInfoPanel.setVisible(true); showORhide = true;
 			cULbl.setForeground(Color.red); fBLbl.setForeground(Color.red); osLbl.setForeground(Color.red);
 		}
 		else if(wasCU == true){
 			AllFBTrue();
-			O2 = true;O1 = true;O0 = true;O4n = true;O3n = true;O2n = true;O1n = true;
+			O1 = true;O0 = true;O4n = true;O3n = true;O2n = true;O1n = true;
 			nextPitchInfoPanel.setVisible(true); showORhide = true;
 			fBLbl.setForeground(Color.red); osLbl.setForeground(Color.red);cULbl.setForeground(new Color(255,128,0));
 		}
 		else{ //wasOS == true
 			AllFBTrue();
 			AllCUTrue();
-			nextPitchInfoPanel.setVisible(true); showORhide = true;
 			cULbl.setForeground(Color.red); fBLbl.setForeground(Color.red);osLbl.setForeground(new Color(255,128,0));
 		}
+		nextPitchInfoPanel.setVisible(true); showORhide = true;
 	}
 	protected void FillZone4Rn(){
 		EVfactor = -4;
 		if(wasFB == true){
 			r4 = true; r3 = true; r2 = true; r1 = true;
-			C2n = true; C3n = true; C4n = true; C1n = true;
+			C2n = true; C3n = true; C4n = true;
 			AllOSTrue();
-			nextPitchInfoPanel.setVisible(true); showORhide = true;
 			cULbl.setForeground(Color.red); fBLbl.setForeground(Color.red); osLbl.setForeground(Color.red);
 		}
 		else if(wasCU == true){
 			AllFBTrue();
 			O2 = true;O1 = true;O0 = true;O4n = true;O3n = true;O2n = true;O1n = true;
-			nextPitchInfoPanel.setVisible(true); showORhide = true;
 			fBLbl.setForeground(Color.red); osLbl.setForeground(Color.red);cULbl.setForeground(new Color(255,128,0));
 		}
 		else{ //wasOS == true
 			AllFBTrue();
 			AllCUTrue();
-			nextPitchInfoPanel.setVisible(true); showORhide = true;
 			cULbl.setForeground(Color.red); fBLbl.setForeground(Color.red);osLbl.setForeground(new Color(255,128,0));
 		}
+		nextPitchInfoPanel.setVisible(true); showORhide = true;
 	}
 	
+	
+	//for lefties - working
 	protected void FZ4L(){
 		EVfactor = 4;
 		if(wasFB == true){
 			l4n = true; l3n = true; l2n = true;
 			AllCUTrue();
 			AllOSTrue();
-			nextPitchInfoPanel.setVisible(true); showORhide = true;
 			cULbl.setForeground(Color.red); osLbl.setForeground(Color.red); fBLbl.setForeground(Color.red);
 		}
 		else if(wasCU == true){
 			l2 = true; l3 = true; l4 = true;
 			lc4n = true; lc3n = true; lc2n = true; 
 			AllOSTrue();
-			nextPitchInfoPanel.setVisible(true); showORhide = true;
 			fBLbl.setForeground(Color.red); osLbl.setForeground(Color.red);cULbl.setForeground(Color.red);
 		}
 		else{	//wasOS == true
 			AllFBTrue();
 			C2 = true; C3 = true; C4 = true;
 			lo2n = true; lo3n = true; lo4n = true;
-			nextPitchInfoPanel.setVisible(true); showORhide = true;
 			cULbl.setForeground(Color.red); fBLbl.setForeground(Color.red);osLbl.setForeground(Color.red);
 		}
+		nextPitchInfoPanel.setVisible(true); showORhide = true;
 	}
 	protected void FZ3L(){
 		EVfactor = 3;
@@ -614,22 +441,20 @@ public class MainC extends JPanel implements ActionListener, MouseListener, Mous
 			l4n = true; l3n = true;
 			lc2n = true; lc3n = true; lc4n = true; lc1n = true;  
 			AllOSTrue();
-			nextPitchInfoPanel.setVisible(true); showORhide = true;
 			cULbl.setForeground(Color.red); osLbl.setForeground(Color.red); fBLbl.setForeground(Color.red);
 		}
 		else if(wasCU == true){
 			l1 = true; l2 = true; l3 = true; l4 = true;
 			lc4n = true; lc3n = true;
 			AllOSTrue();
-			nextPitchInfoPanel.setVisible(true); showORhide = true;
 			fBLbl.setForeground(Color.red); osLbl.setForeground(Color.red);cULbl.setForeground(Color.red);
 		}
 		else{	//wasOS == true
 			AllFBTrue();
 			lc1 = true; lc2 = true; lc3 = true; lc4 = true;
-			nextPitchInfoPanel.setVisible(true); showORhide = true;
 			cULbl.setForeground(Color.red); fBLbl.setForeground(Color.red);osLbl.setForeground(Color.red);
 		}
+		nextPitchInfoPanel.setVisible(true); showORhide = true;
 	}
 	protected void FZ2L(){
 		EVfactor = 2;
@@ -637,63 +462,57 @@ public class MainC extends JPanel implements ActionListener, MouseListener, Mous
 			l4n = true; 
 			lc2n = true; lc3n = true; lc4n = true; lc1n = true; lc0 = true; 
 			AllOSTrue();
-			nextPitchInfoPanel.setVisible(true); showORhide = true;
 			cULbl.setForeground(Color.red); osLbl.setForeground(Color.red); fBLbl.setForeground(Color.red);
 		}
 		else if(wasCU == true){
 			l0 = true; l1 = true; l2 = true; l3 = true; l4 = true;
 			lo3 = true; lo2 = true; lo1 = true; lo0 = true; lo1n = true; lo2n = true; lo3n = true; lo4n = true;
-			nextPitchInfoPanel.setVisible(true); showORhide = true;
 			fBLbl.setForeground(Color.red); osLbl.setForeground(Color.red);cULbl.setForeground(new Color(255,128,0));
 		}
 		else{	//wasOS == true
 			AllFBTrue();
 			lc0 = true; lc1 = true; lc2 = true; lc3 = true; lc4 = true;
-			nextPitchInfoPanel.setVisible(true); showORhide = true;
 			cULbl.setForeground(Color.red); fBLbl.setForeground(Color.red);osLbl.setForeground(new Color(255,128,0));
 		}
+		nextPitchInfoPanel.setVisible(true); showORhide = true;
 	}
 	protected void FZ1L(){
 		EVfactor = 1;
 		if(wasFB == true){
 			lc2n = true; lc3n = true; lc4n = true; lc1n = true; lc0 = true; 
 			AllOSTrue();
-			nextPitchInfoPanel.setVisible(true); showORhide = true;
 			cULbl.setForeground(Color.red); osLbl.setForeground(Color.red);fBLbl.setForeground(new Color(255,128,0));
 		}
 		else if(wasCU == true){
 			l1n = true; l0 = true; l1 = true; l2 = true; l3 = true; l4 = true;
 			lo2 = true; lo1 = true; lo0 = true; lo1n = true; lo2n = true; lo3n = true; lo4n = true;
-			nextPitchInfoPanel.setVisible(true); showORhide = true;
 			fBLbl.setForeground(Color.red); osLbl.setForeground(Color.red);cULbl.setForeground(new Color(255,128,0));
 		}
 		else{	//wasOS == true
 			AllFBTrue();
 			lc1n = true; lc0 = true; lc1 = true; lc2 = true; lc3 = true; lc4 = true;
-			nextPitchInfoPanel.setVisible(true); showORhide = true;
 			cULbl.setForeground(Color.red); fBLbl.setForeground(Color.red); osLbl.setForeground(new Color(255,128,0));
 		}
+		nextPitchInfoPanel.setVisible(true); showORhide = true;
 	}
 	protected void FZ0L(){
 		EVfactor = 0;
 		if(wasFB == true){
 			lc2n = true; lc3n = true; lc4n = true; lc1n = true; 
 			AllOSTrue();
-			nextPitchInfoPanel.setVisible(true); showORhide = true;
 			cULbl.setForeground(Color.red); osLbl.setForeground(Color.red); fBLbl.setForeground(new Color(255,128,0));
 		}
 		else if(wasCU == true){
 			l2n = true; l1n = true; l0 = true; l1 = true; l2 = true; l3 = true; l4 = true;
-			lo1 = true; lo0 = true; lo1n = true; lo2n = true; lo3n = true; lo4n = true;
-			nextPitchInfoPanel.setVisible(true); showORhide = true;
+			lo2 = true; lo1 = true; lo0 = true; lo1n = true; lo2n = true; lo3n = true; lo4n = true;
 			fBLbl.setForeground(Color.red); osLbl.setForeground(Color.red); cULbl.setForeground(new Color(255,128,0));
 		}
 		else{	//wasOS == true
 			AllFBTrue();
 			C0 = true; C1 = true; C2 = true; C3 = true; C4 = true;
-			nextPitchInfoPanel.setVisible(true); showORhide = true;
 			cULbl.setForeground(Color.red); fBLbl.setForeground(Color.red); osLbl.setForeground(new Color(255,128,0));
 		}
+		nextPitchInfoPanel.setVisible(true); showORhide = true;
 	}
 	protected void FZ1nL(){
 		EVfactor = -1;
@@ -701,21 +520,19 @@ public class MainC extends JPanel implements ActionListener, MouseListener, Mous
 			l4 = true;
 			lc1n = true; lc2n = true; lc3n = true; lc4n = true; 
 			AllOSTrue();
-			nextPitchInfoPanel.setVisible(true); showORhide = true;
 			cULbl.setForeground(Color.red); fBLbl.setForeground(Color.red); osLbl.setForeground(Color.red);
 		}
 		else if(wasCU == true){
 			l3n = true; l2n = true; l1n = true; l0 = true; l1 = true;l2 = true;l3 = true;l4 = true;
 			lo0 = true;lo4n = true;lo3n = true;lo2n = true;lo1n = true;
-			nextPitchInfoPanel.setVisible(true); showORhide = true;
 			fBLbl.setForeground(Color.red); osLbl.setForeground(Color.red);cULbl.setForeground(new Color(255,128,0));
 		}
 		else{ //wasOS == true
 			AllFBTrue();
 			C1n = true; C0 = true; C1 = true; C2 = true; C3 = true; C4 = true;
-			nextPitchInfoPanel.setVisible(true); showORhide = true;
 			cULbl.setForeground(Color.red); fBLbl.setForeground(Color.red);osLbl.setForeground(new Color(255,128,0));
 		}
+		nextPitchInfoPanel.setVisible(true); showORhide = true;
 	}
 	protected void FZ2nL(){
 		EVfactor = -2;
@@ -723,21 +540,19 @@ public class MainC extends JPanel implements ActionListener, MouseListener, Mous
 			l4 = true; l3 = true;
 			lc2n = true; lc3n = true; lc4n = true; 
 			AllOSTrue();
-			nextPitchInfoPanel.setVisible(true); showORhide = true;
 			cULbl.setForeground(Color.red); fBLbl.setForeground(Color.red); osLbl.setForeground(Color.red);
 		}
 		else if(wasCU == true){
 			AllFBTrue();
 			lo2 = true;lo1 = true;lo0 = true;lo4n = true;lo3n = true;lo2n = true;lo1n = true;
-			nextPitchInfoPanel.setVisible(true); showORhide = true;
 			fBLbl.setForeground(Color.red); osLbl.setForeground(Color.red);cULbl.setForeground(new Color(255,128,0));
 		}
 		else{ //wasOS == true
 			AllFBTrue();
 			AllCUTrue();
-			nextPitchInfoPanel.setVisible(true); showORhide = true;
 			cULbl.setForeground(Color.red); fBLbl.setForeground(Color.red);osLbl.setForeground(new Color(255,128,0));
 		}
+		nextPitchInfoPanel.setVisible(true); showORhide = true;
 	}
 	protected void FZ3nL(){
 		EVfactor = -3;
@@ -745,21 +560,19 @@ public class MainC extends JPanel implements ActionListener, MouseListener, Mous
 			l4 = true; l3 = true; l2 = true;
 			lc2n = true; lc3n = true; lc4n = true; 
 			AllOSTrue();
-			nextPitchInfoPanel.setVisible(true); showORhide = true;
 			cULbl.setForeground(Color.red); fBLbl.setForeground(Color.red); osLbl.setForeground(Color.red);
 		}
 		else if(wasCU == true){
 			AllFBTrue();
 			lo1 = true;lo0 = true;lo4n = true;lo3n = true;lo2n = true;lo1n = true;
-			nextPitchInfoPanel.setVisible(true); showORhide = true;
 			fBLbl.setForeground(Color.red); osLbl.setForeground(Color.red);cULbl.setForeground(new Color(255,128,0));
 		}
 		else{ //wasOS == true
 			AllFBTrue();
 			AllCUTrue();
-			nextPitchInfoPanel.setVisible(true); showORhide = true;
 			cULbl.setForeground(Color.red); fBLbl.setForeground(Color.red);osLbl.setForeground(new Color(255,128,0));
 		}
+		nextPitchInfoPanel.setVisible(true); showORhide = true;
 	}
 	protected void FZ4nL(){
 		EVfactor = -4;
@@ -767,21 +580,19 @@ public class MainC extends JPanel implements ActionListener, MouseListener, Mous
 			l4 = true; l3 = true; l2 = true; l1 = true;
 			lc2n = true; lc3n = true; lc4n = true;
 			AllOSTrue();
-			nextPitchInfoPanel.setVisible(true); showORhide = true;
 			cULbl.setForeground(Color.red); fBLbl.setForeground(Color.red); osLbl.setForeground(Color.red);
 		}
 		else if(wasCU == true){
 			AllFBTrue();
 			lo2 = true;lo1 = true;lo0 = true;lo4n = true;lo3n = true;lo2n = true;lo1n = true;
-			nextPitchInfoPanel.setVisible(true); showORhide = true;
 			fBLbl.setForeground(Color.red); osLbl.setForeground(Color.red);cULbl.setForeground(new Color(255,128,0));
 		}
 		else{ //wasOS == true
 			AllFBTrue();
 			AllCUTrue();
-			nextPitchInfoPanel.setVisible(true); showORhide = true;
 			cULbl.setForeground(Color.red); fBLbl.setForeground(Color.red);osLbl.setForeground(new Color(255,128,0));
 		}
+		nextPitchInfoPanel.setVisible(true); showORhide = true;
 	}
 	
 	
@@ -907,7 +718,13 @@ public class MainC extends JPanel implements ActionListener, MouseListener, Mous
 				}
 			}
 		}
-		//for lefty
+		//for lefties
+		// -----------EV ZONES------------
+		//   | 4  | 3  | 2  | 1  | 0  |
+		//   | 3  | 2  | 1  | 0  | -1 |
+		//   | 2  | 1  | 0  | -1 | -2 |
+		//   | 1  | 0  | -1 | -2 | -3 |
+		//   | 0  | -1 | -2 | -3 | -4 |
 		else{
 			if(clx > w/4 && cly > h/4){ 
 				//first column
@@ -1040,45 +857,52 @@ public class MainC extends JPanel implements ActionListener, MouseListener, Mous
 					cULbl.setForeground(new Color(255,152,0,52));
 					osLbl.setForeground(new Color(255,152,0,52));
 					hiLiFB = true; hiLiCU = false; hiLiOS = false;
+					aNr = 200;
 				}
 				else if(mx < 3*getWidth()/5){
 					cULbl.setForeground(Color.red);
 					fBLbl.setForeground(new Color(255,152,0,52));
 					osLbl.setForeground(new Color(255,152,0,52));
 					hiLiFB = false; hiLiCU = true; hiLiOS = false;
+					aNr = 200;
 				}
 				else if(mx < 4*getWidth()/5){
 					osLbl.setForeground(Color.red);
 					fBLbl.setForeground(new Color(255,152,0,52));
 					cULbl.setForeground(new Color(255,152,0,52));
 					hiLiFB = false; hiLiCU = false; hiLiOS = true;
+					aNr = 200;
 				}
 			}
 		}
-		else{ //for lefties TODO do I need to initialize boolean variables to false like I did for righties?
+		else{ //for lefties
 			if(my > 19*getHeight()/20 && mx > getWidth() /5){
 				if(mx < 2 * getWidth() / 5){
 					fBLbl.setForeground(Color.red);
 					cULbl.setForeground(new Color(255,152,0,52));
 					osLbl.setForeground(new Color(255,152,0,52));
 					hiLiFB = true; hiLiCU = false; hiLiOS = false;
+					aNr = 200;
 				}
 				else if(mx < 3*getWidth()/5){
 					cULbl.setForeground(Color.red);
 					fBLbl.setForeground(new Color(255,152,0,52));
 					osLbl.setForeground(new Color(255,152,0,52));
 					hiLiFB = false; hiLiCU = true; hiLiOS = false;
+					aNr = 200;
 				}
 				else if(mx < 4*getWidth()/5){
 					osLbl.setForeground(Color.red);
 					fBLbl.setForeground(new Color(255,152,0,52));
 					cULbl.setForeground(new Color(255,152,0,52));
 					hiLiFB = false; hiLiCU = false; hiLiOS = true;
+					aNr = 200;
 				}
 			}
 		}
 	}
 	
+	//set all booleans to false -- called when a new batter comes up
 	protected void setALLBsF(){
 		r0 = false;
 		r1 = false;
@@ -1138,7 +962,7 @@ public class MainC extends JPanel implements ActionListener, MouseListener, Mous
 		previousPitchLbl.setText("PP: ");
 	}
 	
-	//for button clicks
+	//for button clicks - TODO check this out
 	public void actionPerformed(ActionEvent e) {
 		if(showORhide == true){
 			nextPitchLbl.setVisible(true);
@@ -1156,6 +980,7 @@ public class MainC extends JPanel implements ActionListener, MouseListener, Mous
 			rHButton.setVisible(true);
 			lHButton.setVisible(true);
 			newBatterButton.setVisible(false);
+			instructionsLbl.setVisible(false);
 			setALLBsF();
 		}
 		if(e.getSource() == rHButton){
@@ -1163,12 +988,14 @@ public class MainC extends JPanel implements ActionListener, MouseListener, Mous
 			rHButton.setVisible(false);
 			lHButton.setVisible(false);
 			newBatterButton.setVisible(true);
+			instructionsLbl.setVisible(true);
 		}
 		else if(e.getSource() == lHButton){
 			wH = false;
 			rHButton.setVisible(false);
 			lHButton.setVisible(false);
 			newBatterButton.setVisible(true);
+			instructionsLbl.setVisible(true);
 		}
 		if(e.getSource() == showORhideButton){
 			if(showORhide == false){
@@ -1182,14 +1009,13 @@ public class MainC extends JPanel implements ActionListener, MouseListener, Mous
 		}
 		
 		if(e.getSource() == fastBButton){
-			String q = pitchLbl.getText();
-			if(q == "Pitch: Fastball    "){
+			if(wasFB){
 				previousPitchLbl.setText("PP: FB");
 			}
-			else if(q == "Pitch: Change Up    "){
+			else if(wasCU){
 				previousPitchLbl.setText("PP: CU");
 			}
-			else if(q == "Pitch: Off Speed    "){
+			else{
 				previousPitchLbl.setText("PP: OS");
 			}
 			pitchLbl.setText("Pitch: Fastball    ");
@@ -1237,7 +1063,7 @@ public class MainC extends JPanel implements ActionListener, MouseListener, Mous
 		if(aNr < 255){
 			aNr ++;
 			if(aNr == 255){
-				aNr = 80;
+				aNr = 150;
 			}
 		}
 		repaint();
@@ -1277,351 +1103,282 @@ public class MainC extends JPanel implements ActionListener, MouseListener, Mous
 			//if(showFB == true){
 			if(hiLiFB == true){
 				g2.setColor(new Color(255,0,0,aNr));
+				if(r0 == true){
+					g2.fillRect(w/4+1, h/4+1, w /10-1, h/10-1);
+					g2.fillRect(w/4 + w/10+1, h/4 + h/10+1, w /10-1, h/10-1);
+					g2.fillRect(w/4 + w/5+1, h/4 + h/5+1, w /10-1, h/10-1);
+					g2.fillRect(w/4 + 3*w/10+1, h/4 + 3*h/10+1, w /10-1, h/10-1);
+					g2.fillRect(w/4 + 4*w/10+1, h/4 + 4*h/10+1, w /10-1, h/10-1);
+				}
+				if(r1 == true){
+					g2.fillRect(w/4 + w/10+1, h/4+1, w /10-1, h/10-1);
+					g2.fillRect(w/4 + w/5+1, h/4 + w/10+1, w /10-1, h/10-1);
+					g2.fillRect(w/4 + 3*w/10+1, h/4 + w/5+1, w /10-1, h/10-1);
+					g2.fillRect(w/4 + 4*w/10+1, h/4 + 3*w/10+1, w /10-1, h/10-1);
+				}
+				if(r1n == true){
+					g2.fillRect(w/4 +1, h/4+ w/10+1, w /10-1, h/10-1);
+					g2.fillRect(w/4 + w/10+1, h/4 + w/5+1, w /10-1, h/10-1);
+					g2.fillRect(w/4 + w/5+1, h/4 + 3*w/10+1, w /10-1, h/10-1);
+					g2.fillRect(w/4 + 3*w/10+1, h/4 + 4*w/10+1, w /10-1, h/10-1);
+				}
+				if(r2 == true){
+					g2.fillRect(w/4 + w/5+1, h/4 +1, w /10-1, h/10-1);
+					g2.fillRect(w/4 + 3*w/10+1, h/4 + w/10+1, w /10-1, h/10-1);
+					g2.fillRect(w/4 + 4*w/10+1, h/4 + w/5+1, w /10-1, h/10-1);
+				}
+				if(r2n == true){
+					g2.fillRect(w/4 +1, h/4 + h/5+1, w /10-1, h/10-1);
+					g2.fillRect(w/4 + w/10+1, h/4 + 3*h/10+1, w /10-1, h/10-1);
+					g2.fillRect(w/4 + w/5+1, h/4 +2* h/5+1, w /10-1, h/10-1);
+				}
+				if(r3 == true){
+					g2.fillRect(w/4 + 3*w/10+1, h/4 +1, w /10-1, h/10-1);
+					g2.fillRect(w/4 + 4*w/10+1, h/4 + w/10+1, w /10-1, h/10-1);
+				}
+				if(r3n == true){
+					g2.fillRect(w/4 +1, h/4 + 3*h/10+1, w /10-1, h/10-1);
+					g2.fillRect(w/4 + w/10+1, h/4 +2* h/5+1, w /10-1, h/10-1);
+				}
+				if(r4 == true){
+					g2.fillRect(w/4 + 4*w/10+1, h/4 +1, w /10-1, h/10-1);
+				}
+				if(r4n == true){
+					g2.fillRect(w/4 +1, h/4 +2* h/5+1, w /10-1, h/10-1);
+				}
 			}
 			else if(hiLiCU == true){
 				g2.setColor(new Color(255,128,0,aNr));
+				if(C0 == true){
+					g2.fillRect(w/4+1, h/4+1, w /10-1, h/10-1);
+					g2.fillRect(w/4 + w/10+1, h/4 + h/10+1, w /10-1, h/10-1);
+					g2.fillRect(w/4 + w/5+1, h/4 + h/5+1, w /10-1, h/10-1);
+					g2.fillRect(w/4 + 3*w/10+1, h/4 + 3*h/10+1, w /10-1, h/10-1);
+					g2.fillRect(w/4 + 4*w/10+1, h/4 + 4*h/10+1, w /10-1, h/10-1);
+				}
+				if(C1 == true){
+					g2.fillRect(w/4 + w/10+1, h/4+1, w /10-1, h/10-1);
+					g2.fillRect(w/4 + w/5+1, h/4 + w/10+1, w /10-1, h/10-1);
+					g2.fillRect(w/4 + 3*w/10+1, h/4 + w/5+1, w /10-1, h/10-1);
+					g2.fillRect(w/4 + 4*w/10+1, h/4 + 3*w/10+1, w /10-1, h/10-1);
+				}
+				if(C1n == true){
+					g2.fillRect(w/4 +1, h/4+ w/10+1, w /10-1, h/10-1);
+					g2.fillRect(w/4 + w/10+1, h/4 + w/5+1, w /10-1, h/10-1);
+					g2.fillRect(w/4 + w/5+1, h/4 + 3*w/10+1, w /10-1, h/10-1);
+					g2.fillRect(w/4 + 3*w/10+1, h/4 + 4*w/10+1, w /10-1, h/10-1);
+				}
+				if(C2 == true){
+					g2.fillRect(w/4 + w/5+1, h/4 +1, w /10-1, h/10-1);
+					g2.fillRect(w/4 + 3*w/10+1, h/4 + w/10+1, w /10-1, h/10-1);
+					g2.fillRect(w/4 + 4*w/10+1, h/4 + w/5+1, w /10-1, h/10-1);
+				}
+				if(C2n == true){
+					g2.fillRect(w/4 +1, h/4 + h/5+1, w /10-1, h/10-1);
+					g2.fillRect(w/4 + w/10+1, h/4 + 3*h/10+1, w /10-1, h/10-1);
+					g2.fillRect(w/4 + w/5+1, h/4 +2* h/5+1, w /10-1, h/10-1);
+				}
+				if(C3 == true){
+					g2.fillRect(w/4 + 3*w/10+1, h/4 +1, w /10-1, h/10-1);
+					g2.fillRect(w/4 + 4*w/10+1, h/4 + w/10+1, w /10-1, h/10-1);
+				}
+				if(C3n == true){
+					g2.fillRect(w/4 +1, h/4 + 3*h/10+1, w /10-1, h/10-1);
+					g2.fillRect(w/4 + w/10+1, h/4 +2* h/5+1, w /10-1, h/10-1);
+				}
+				if(C4 == true){
+					g2.fillRect(w/4 + 4*w/10+1, h/4 +1, w /10-1, h/10-1);
+				}
+				if(C4n == true){
+					g2.fillRect(w/4 +1, h/4 +2* h/5+1, w /10-1, h/10-1);
+				}
 			}
 			else if(hiLiOS == true){
 				g2.setColor(new Color(255,255,0,aNr));
+				if(O0 == true){
+					g2.fillRect(w/4+1, h/4+1, w /10-1, h/10-1);
+					g2.fillRect(w/4 + w/10+1, h/4 + h/10+1, w /10-1, h/10-1);
+					g2.fillRect(w/4 + w/5+1, h/4 + h/5+1, w /10-1, h/10-1);
+					g2.fillRect(w/4 + 3*w/10+1, h/4 + 3*h/10+1, w /10-1, h/10-1);
+					g2.fillRect(w/4 + 4*w/10+1, h/4 + 4*h/10+1, w /10-1, h/10-1);
+				}
+				if(O1 == true){
+					g2.fillRect(w/4 + w/10+1, h/4+1, w /10-1, h/10-1);
+					g2.fillRect(w/4 + w/5+1, h/4 + w/10+1, w /10-1, h/10-1);
+					g2.fillRect(w/4 + 3*w/10+1, h/4 + w/5+1, w /10-1, h/10-1);
+					g2.fillRect(w/4 + 4*w/10+1, h/4 + 3*w/10+1, w /10-1, h/10-1);
+				}
+				if(O1n == true){
+					g2.fillRect(w/4 +1, h/4+ w/10+1, w /10-1, h/10-1);
+					g2.fillRect(w/4 + w/10+1, h/4 + w/5+1, w /10-1, h/10-1);
+					g2.fillRect(w/4 + w/5+1, h/4 + 3*w/10+1, w /10-1, h/10-1);
+					g2.fillRect(w/4 + 3*w/10+1, h/4 + 4*w/10+1, w /10-1, h/10-1);
+				}
+				if(O2 == true){
+					g2.fillRect(w/4 + w/5+1, h/4 +1, w /10-1, h/10-1);
+					g2.fillRect(w/4 + 3*w/10+1, h/4 + w/10+1, w /10-1, h/10-1);
+					g2.fillRect(w/4 + 4*w/10+1, h/4 + w/5+1, w /10-1, h/10-1);
+				}
+				if(O2n == true){
+					g2.fillRect(w/4 +1, h/4 + h/5+1, w /10-1, h/10-1);
+					g2.fillRect(w/4 + w/10+1, h/4 + 3*h/10+1, w /10-1, h/10-1);
+					g2.fillRect(w/4 + w/5+1, h/4 +2* h/5+1, w /10-1, h/10-1);
+				}
+				if(O3 == true){
+					g2.fillRect(w/4 + 3*w/10+1, h/4 +1, w /10-1, h/10-1);
+					g2.fillRect(w/4 + 4*w/10+1, h/4 + w/10+1, w /10-1, h/10-1);
+				}
+				if(O3n == true){
+					g2.fillRect(w/4 +1, h/4 + 3*h/10+1, w /10-1, h/10-1);
+					g2.fillRect(w/4 + w/10+1, h/4 +2* h/5+1, w /10-1, h/10-1);
+				}
+				if(O4 == true){
+					g2.fillRect(w/4 + 4*w/10+1, h/4 +1, w /10-1, h/10-1);
+				}
+				if(O4n == true){
+					g2.fillRect(w/4 +1, h/4 +2* h/5+1, w /10-1, h/10-1);
+				}
 			}
-//			else{
-//				if(hiLiCU == true || hiLiOS == true){
-//					g2.setColor(new Color(255,0,0,10));
-//				}
-//				else{
-//					g2.setColor(new Color(255,0,0,aNr));
-//				}
-//			}
-			if(r0 == true){
-				g2.fillRect(w/4+1, h/4+1, w /10-1, h/10-1);
-				g2.fillRect(w/4 + w/10+1, h/4 + h/10+1, w /10-1, h/10-1);
-				g2.fillRect(w/4 + w/5+1, h/4 + h/5+1, w /10-1, h/10-1);
-				g2.fillRect(w/4 + 3*w/10+1, h/4 + 3*h/10+1, w /10-1, h/10-1);
-				g2.fillRect(w/4 + 4*w/10+1, h/4 + 4*h/10+1, w /10-1, h/10-1);
-			}
-			if(r1 == true){
-				g2.fillRect(w/4 + w/10+1, h/4+1, w /10-1, h/10-1);
-				g2.fillRect(w/4 + w/5+1, h/4 + w/10+1, w /10-1, h/10-1);
-				g2.fillRect(w/4 + 3*w/10+1, h/4 + w/5+1, w /10-1, h/10-1);
-				g2.fillRect(w/4 + 4*w/10+1, h/4 + 3*w/10+1, w /10-1, h/10-1);
-			}
-			if(r1n == true){
-				g2.fillRect(w/4 +1, h/4+ w/10+1, w /10-1, h/10-1);
-				g2.fillRect(w/4 + w/10+1, h/4 + w/5+1, w /10-1, h/10-1);
-				g2.fillRect(w/4 + w/5+1, h/4 + 3*w/10+1, w /10-1, h/10-1);
-				g2.fillRect(w/4 + 3*w/10+1, h/4 + 4*w/10+1, w /10-1, h/10-1);
-			}
-			if(r2 == true){
-				g2.fillRect(w/4 + w/5+1, h/4 +1, w /10-1, h/10-1);
-				g2.fillRect(w/4 + 3*w/10+1, h/4 + w/10+1, w /10-1, h/10-1);
-				g2.fillRect(w/4 + 4*w/10+1, h/4 + w/5+1, w /10-1, h/10-1);
-			}
-			if(r2n == true){
-				g2.fillRect(w/4 +1, h/4 + h/5+1, w /10-1, h/10-1);
-				g2.fillRect(w/4 + w/10+1, h/4 + 3*h/10+1, w /10-1, h/10-1);
-				g2.fillRect(w/4 + w/5+1, h/4 +2* h/5+1, w /10-1, h/10-1);
-			}
-			if(r3 == true){
-				g2.fillRect(w/4 + 3*w/10+1, h/4 +1, w /10-1, h/10-1);
-				g2.fillRect(w/4 + 4*w/10+1, h/4 + w/10+1, w /10-1, h/10-1);
-			}
-			if(r3n == true){
-				g2.fillRect(w/4 +1, h/4 + 3*h/10+1, w /10-1, h/10-1);
-				g2.fillRect(w/4 + w/10+1, h/4 +2* h/5+1, w /10-1, h/10-1);
-			}
-			if(r4 == true){
-				g2.fillRect(w/4 + 4*w/10+1, h/4 +1, w /10-1, h/10-1);
-			}
-			if(r4n == true){
-				g2.fillRect(w/4 +1, h/4 +2* h/5+1, w /10-1, h/10-1);
-			}
-			//}
-		//if(showCU == true){//if(showCU == true){ //TODO suspicious
-//			if(hiLiCU == true){
-//				g2.setColor(new Color(255,128,0));
-//			}
-//			else{
-//				if(hiLiFB == true || hiLiOS == true){
-//					g2.setColor(new Color(255,128,0,10));
-//				}
-//				else{
-//					g2.setColor(new Color(255,128,0,aNr));
-//				}
-//			}
-			if(C0 == true){
-				g2.fillRect(w/4+1, h/4+1, w /10-1, h/10-1);
-				g2.fillRect(w/4 + w/10+1, h/4 + h/10+1, w /10-1, h/10-1);
-				g2.fillRect(w/4 + w/5+1, h/4 + h/5+1, w /10-1, h/10-1);
-				g2.fillRect(w/4 + 3*w/10+1, h/4 + 3*h/10+1, w /10-1, h/10-1);
-				g2.fillRect(w/4 + 4*w/10+1, h/4 + 4*h/10+1, w /10-1, h/10-1);
-			}
-			if(C1 == true){
-				g2.fillRect(w/4 + w/10+1, h/4+1, w /10-1, h/10-1);
-				g2.fillRect(w/4 + w/5+1, h/4 + w/10+1, w /10-1, h/10-1);
-				g2.fillRect(w/4 + 3*w/10+1, h/4 + w/5+1, w /10-1, h/10-1);
-				g2.fillRect(w/4 + 4*w/10+1, h/4 + 3*w/10+1, w /10-1, h/10-1);
-			}
-			if(C1n == true){
-				g2.fillRect(w/4 +1, h/4+ w/10+1, w /10-1, h/10-1);
-				g2.fillRect(w/4 + w/10+1, h/4 + w/5+1, w /10-1, h/10-1);
-				g2.fillRect(w/4 + w/5+1, h/4 + 3*w/10+1, w /10-1, h/10-1);
-				g2.fillRect(w/4 + 3*w/10+1, h/4 + 4*w/10+1, w /10-1, h/10-1);
-			}
-			if(C2 == true){
-				g2.fillRect(w/4 + w/5+1, h/4 +1, w /10-1, h/10-1);
-				g2.fillRect(w/4 + 3*w/10+1, h/4 + w/10+1, w /10-1, h/10-1);
-				g2.fillRect(w/4 + 4*w/10+1, h/4 + w/5+1, w /10-1, h/10-1);
-			}
-			if(C2n == true){
-				g2.fillRect(w/4 +1, h/4 + h/5+1, w /10-1, h/10-1);
-				g2.fillRect(w/4 + w/10+1, h/4 + 3*h/10+1, w /10-1, h/10-1);
-				g2.fillRect(w/4 + w/5+1, h/4 +2* h/5+1, w /10-1, h/10-1);
-			}
-			if(C3 == true){
-				g2.fillRect(w/4 + 3*w/10+1, h/4 +1, w /10-1, h/10-1);
-				g2.fillRect(w/4 + 4*w/10+1, h/4 + w/10+1, w /10-1, h/10-1);
-			}
-			if(C3n == true){
-				g2.fillRect(w/4 +1, h/4 + 3*h/10+1, w /10-1, h/10-1);
-				g2.fillRect(w/4 + w/10+1, h/4 +2* h/5+1, w /10-1, h/10-1);
-			}
-			if(C4 == true){
-				g2.fillRect(w/4 + 4*w/10+1, h/4 +1, w /10-1, h/10-1);
-			}
-			if(C4n == true){
-				g2.fillRect(w/4 +1, h/4 +2* h/5+1, w /10-1, h/10-1);
-			}
-			//}
-		//if(showOS == true){//if(showOS == true){ //TODO suspicious
-//			if(hiLiOS == true){
-//				g2.setColor(new Color(255,255,0,aNr));
-//			}
-//			else{
-//				if(hiLiFB == true || hiLiCU == true){
-//					g2.setColor(new Color(255,255,0,10));
-//				}
-//				else{
-//					g2.setColor(new Color(255,255,0,aNr));
-//				}
-//			}
-			if(O0 == true){
-				g2.fillRect(w/4+1, h/4+1, w /10-1, h/10-1);
-				g2.fillRect(w/4 + w/10+1, h/4 + h/10+1, w /10-1, h/10-1);
-				g2.fillRect(w/4 + w/5+1, h/4 + h/5+1, w /10-1, h/10-1);
-				g2.fillRect(w/4 + 3*w/10+1, h/4 + 3*h/10+1, w /10-1, h/10-1);
-				g2.fillRect(w/4 + 4*w/10+1, h/4 + 4*h/10+1, w /10-1, h/10-1);
-			}
-			if(O1 == true){
-				g2.fillRect(w/4 + w/10+1, h/4+1, w /10-1, h/10-1);
-				g2.fillRect(w/4 + w/5+1, h/4 + w/10+1, w /10-1, h/10-1);
-				g2.fillRect(w/4 + 3*w/10+1, h/4 + w/5+1, w /10-1, h/10-1);
-				g2.fillRect(w/4 + 4*w/10+1, h/4 + 3*w/10+1, w /10-1, h/10-1);
-			}
-			if(O1n == true){
-				g2.fillRect(w/4 +1, h/4+ w/10+1, w /10-1, h/10-1);
-				g2.fillRect(w/4 + w/10+1, h/4 + w/5+1, w /10-1, h/10-1);
-				g2.fillRect(w/4 + w/5+1, h/4 + 3*w/10+1, w /10-1, h/10-1);
-				g2.fillRect(w/4 + 3*w/10+1, h/4 + 4*w/10+1, w /10-1, h/10-1);
-			}
-			if(O2 == true){
-				g2.fillRect(w/4 + w/5+1, h/4 +1, w /10-1, h/10-1);
-				g2.fillRect(w/4 + 3*w/10+1, h/4 + w/10+1, w /10-1, h/10-1);
-				g2.fillRect(w/4 + 4*w/10+1, h/4 + w/5+1, w /10-1, h/10-1);
-			}
-			if(O2n == true){
-				g2.fillRect(w/4 +1, h/4 + h/5+1, w /10-1, h/10-1);
-				g2.fillRect(w/4 + w/10+1, h/4 + 3*h/10+1, w /10-1, h/10-1);
-				g2.fillRect(w/4 + w/5+1, h/4 +2* h/5+1, w /10-1, h/10-1);
-			}
-			if(O3 == true){
-				g2.fillRect(w/4 + 3*w/10+1, h/4 +1, w /10-1, h/10-1);
-				g2.fillRect(w/4 + 4*w/10+1, h/4 + w/10+1, w /10-1, h/10-1);
-			}
-			if(O3n == true){
-				g2.fillRect(w/4 +1, h/4 + 3*h/10+1, w /10-1, h/10-1);
-				g2.fillRect(w/4 + w/10+1, h/4 +2* h/5+1, w /10-1, h/10-1);
-			}
-			if(O4 == true){
-				g2.fillRect(w/4 + 4*w/10+1, h/4 +1, w /10-1, h/10-1);
-			}
-			if(O4n == true){
-				g2.fillRect(w/4 +1, h/4 +2* h/5+1, w /10-1, h/10-1);
-			}
-			//}
 	}
 		else if (wH == false){
-			//if(showFB == true){
 			if(hiLiFB == true){
 				g2.setColor(new Color(255,0,0,aNr));
+				if(l0 == true){
+					g2.fillRect(w/4+ 4*w/10+1, h/4+1, w /10-1, h/10-1);
+					g2.fillRect(w/4 + 3*w/10+1, h/4 + h/10+1, w /10-1, h/10-1);
+					g2.fillRect(w/4 + w/5+1, h/4 + h/5+1, w /10-1, h/10-1);
+					g2.fillRect(w/4 + w/10+1, h/4 + 3*h/10+1, w /10-1, h/10-1);
+					g2.fillRect(w/4 +1, h/4 + 4*h/10+1, w /10-1, h/10-1);
+				}
+				if(l1 == true){
+					g2.fillRect(w/4 + 3*w/10+1, h/4 +1, w /10-1, h/10-1);
+					g2.fillRect(w/4 + 2*w/10+1, h/4 + h/10+1, w /10-1, h/10-1);
+					g2.fillRect(w/4 + w/10+1, h/4 + 2*h/10+1, w /10-1, h/10-1);
+					g2.fillRect(w/4 +1, h/4 + 3*h/10+1, w /10-1, h/10-1);
+				}
+				if(l1n == true){
+					g2.fillRect(w/4 + 4*w/10+1, h/4 + h/10+1, w /10-1, h/10-1);
+					g2.fillRect(w/4 + 3*w/10+1, h/4 + h/5+1, w /10-1, h/10-1);
+					g2.fillRect(w/4 + 2*w/10+1, h/4 + 3*h/10+1, w /10-1, h/10-1);
+					g2.fillRect(w/4 +w/10+1, h/4 + 4*h/10+1, w /10-1, h/10-1);
+				}
+				if(l2 == true){
+					g2.fillRect(w/4 + 2*w/10+1, h/4 +1, w /10-1, h/10-1);
+					g2.fillRect(w/4 + w/10+1, h/4 + h/10+1, w /10-1, h/10-1);
+					g2.fillRect(w/4 +1, h/4 + 2*h/10+1, w /10-1, h/10-1);
+				}
+				if(l2n == true){
+					g2.fillRect(w/4 + 4*w/10+1, h/4 + 2*h/10+1, w /10-1, h/10-1);
+					g2.fillRect(w/4 + 3*w/10+1, h/4 + 3*h/10+1, w /10-1, h/10-1);
+					g2.fillRect(w/4 + 2*w/10+1, h/4 + 4*h/10+1, w /10-1, h/10-1);
+				}
+				if(l3 == true){
+					g2.fillRect(w/4 + w/10+1, h/4 +1, w /10-1, h/10-1);
+					g2.fillRect(w/4 +1, h/4 + h/10+1, w /10-1, h/10-1);
+				}
+				if(l3n == true){
+					g2.fillRect(w/4 + 4*w/10+1, h/4 + 3*h/10+1, w /10-1, h/10-1);
+					g2.fillRect(w/4 + 3*w/10+1, h/4 + 4*h/10+1, w /10-1, h/10-1);
+				}
+				if(l4 == true){
+					g2.fillRect(w/4 +1, h/4 +1, w /10-1, h/10-1);
+				}
+				if(l4n == true){
+					g2.fillRect(w/4 + 4*w/10+1, h/4 + 4*h/10+1, w /10-1, h/10-1);
+				}
 			}
 			else if(hiLiCU == true){
 				g2.setColor(new Color(255,128,0,aNr));
+				if(lc0 == true){
+					g2.fillRect(w/4+ 4*w/10+1, h/4+1, w /10-1, h/10-1);
+					g2.fillRect(w/4 + 3*w/10+1, h/4 + h/10+1, w /10-1, h/10-1);
+					g2.fillRect(w/4 + w/5+1, h/4 + h/5+1, w /10-1, h/10-1);
+					g2.fillRect(w/4 + w/10+1, h/4 + 3*h/10+1, w /10-1, h/10-1);
+					g2.fillRect(w/4 +1, h/4 + 4*h/10+1, w /10-1, h/10-1);
+				}
+				if(lc1 == true){
+					g2.fillRect(w/4 + 3*w/10+1, h/4 +1, w /10-1, h/10-1);
+					g2.fillRect(w/4 + 2*w/10+1, h/4 + h/10+1, w /10-1, h/10-1);
+					g2.fillRect(w/4 + w/10+1, h/4 + 2*h/10+1, w /10-1, h/10-1);
+					g2.fillRect(w/4 +1, h/4 + 3*h/10+1, w /10-1, h/10-1);
+				}
+				if(lc1n == true){
+					g2.fillRect(w/4 + 4*w/10+1, h/4 + h/10+1, w /10-1, h/10-1);
+					g2.fillRect(w/4 + 3*w/10+1, h/4 + h/5+1, w /10-1, h/10-1);
+					g2.fillRect(w/4 + 2*w/10+1, h/4 + 3*h/10+1, w /10-1, h/10-1);
+					g2.fillRect(w/4 +w/10+1, h/4 + 4*h/10+1, w /10-1, h/10-1);
+				}
+				if(lc2 == true){
+					g2.fillRect(w/4 + 2*w/10+1, h/4 +1, w /10-1, h/10-1);
+					g2.fillRect(w/4 + w/10+1, h/4 + h/10+1, w /10-1, h/10-1);
+					g2.fillRect(w/4 +1, h/4 + 2*h/10+1, w /10-1, h/10-1);
+				}
+				if(lc2n == true){
+					g2.fillRect(w/4 + 4*w/10+1, h/4 + 2*h/10+1, w /10-1, h/10-1);
+					g2.fillRect(w/4 + 3*w/10+1, h/4 + 3*h/10+1, w /10-1, h/10-1);
+					g2.fillRect(w/4 + 2*w/10+1, h/4 + 4*h/10+1, w /10-1, h/10-1);
+				}
+				if(lc3 == true){
+					g2.fillRect(w/4 + w/10+1, h/4 +1, w /10-1, h/10-1);
+					g2.fillRect(w/4 +1, h/4 + h/10+1, w /10-1, h/10-1);
+				}
+				if(lc3n == true){
+					g2.fillRect(w/4 + 4*w/10+1, h/4 + 3*h/10+1, w /10-1, h/10-1);
+					g2.fillRect(w/4 + 3*w/10+1, h/4 + 4*h/10+1, w /10-1, h/10-1);
+				}
+				if(lc4 == true){
+					g2.fillRect(w/4 +1, h/4 +1, w /10-1, h/10-1);
+				}
+				if(lc4n == true){
+					g2.fillRect(w/4 + 4*w/10+1, h/4 + 4*h/10+1, w /10-1, h/10-1);
+				}
 			}
 			else if(hiLiOS == true){
 				g2.setColor(new Color(255,255,0,aNr));
+				if(lo0 == true){
+					g2.fillRect(w/4+1, h/4+1, w /10-1, h/10-1);
+					g2.fillRect(w/4 + w/10+1, h/4 + h/10+1, w /10-1, h/10-1);
+					g2.fillRect(w/4 + w/5+1, h/4 + h/5+1, w /10-1, h/10-1);
+					g2.fillRect(w/4 + 3*w/10+1, h/4 + 3*h/10+1, w /10-1, h/10-1);
+					g2.fillRect(w/4 + 4*w/10+1, h/4 + 4*h/10+1, w /10-1, h/10-1);
+				}
+				if(lo1 == true){
+					g2.fillRect(w/4 + 3*w/10+1, h/4 +1, w /10-1, h/10-1);
+					g2.fillRect(w/4 + 2*w/10+1, h/4 + h/10+1, w /10-1, h/10-1);
+					g2.fillRect(w/4 + w/10+1, h/4 + 2*h/10+1, w /10-1, h/10-1);
+					g2.fillRect(w/4 +1, h/4 + 3*h/10+1, w /10-1, h/10-1);
+				}
+				if(lo1n == true){
+					g2.fillRect(w/4 + 4*w/10+1, h/4 + h/10+1, w /10-1, h/10-1);
+					g2.fillRect(w/4 + 3*w/10+1, h/4 + h/5+1, w /10-1, h/10-1);
+					g2.fillRect(w/4 + 2*w/10+1, h/4 + 3*h/10+1, w /10-1, h/10-1);
+					g2.fillRect(w/4 +w/10+1, h/4 + 4*h/10+1, w /10-1, h/10-1);
+				}
+				if(lo2 == true){
+					g2.fillRect(w/4 + 2*w/10+1, h/4 +1, w /10-1, h/10-1);
+					g2.fillRect(w/4 + w/10+1, h/4 + h/10+1, w /10-1, h/10-1);
+					g2.fillRect(w/4 +1, h/4 + 2*h/10+1, w /10-1, h/10-1);
+				}
+				if(lo2n == true){
+					g2.fillRect(w/4 + 4*w/10+1, h/4 + 2*h/10+1, w /10-1, h/10-1);
+					g2.fillRect(w/4 + 3*w/10+1, h/4 + 3*h/10+1, w /10-1, h/10-1);
+					g2.fillRect(w/4 + 2*w/10+1, h/4 + 4*h/10+1, w /10-1, h/10-1);
+				}
+				if(lo3 == true){
+					g2.fillRect(w/4 + w/10+1, h/4 +1, w /10-1, h/10-1);
+					g2.fillRect(w/4 +1, h/4 + h/10+1, w /10-1, h/10-1);
+				}
+				if(lo3n == true){
+					g2.fillRect(w/4 + 4*w/10+1, h/4 + 3*h/10+1, w /10-1, h/10-1);
+					g2.fillRect(w/4 + 3*w/10+1, h/4 + 4*h/10+1, w /10-1, h/10-1);
+				}
+				if(lo4 == true){
+					g2.fillRect(w/4 +1, h/4 +1, w /10-1, h/10-1);
+				}
+				if(lo4n == true){
+					g2.fillRect(w/4 + 4*w/10+1, h/4 + 4*h/10+1, w /10-1, h/10-1);
+				}
 			}
-//			else{
-//				if(hiLiFB == true || hiLiCU == true){
-//					g2.setColor(new Color(255,255,0,10));
-//				}
-//				else{
-//					g2.setColor(new Color(255,255,0,aNr));
-//				}
-//			}
-			if(l0 == true){
-				g2.fillRect(w/4+ 4*w/10+1, h/4+1, w /10-1, h/10-1);
-				g2.fillRect(w/4 + 3*w/10+1, h/4 + h/10+1, w /10-1, h/10-1);
-				g2.fillRect(w/4 + w/5+1, h/4 + h/5+1, w /10-1, h/10-1);
-				g2.fillRect(w/4 + w/10+1, h/4 + 3*h/10+1, w /10-1, h/10-1);
-				g2.fillRect(w/4 +1, h/4 + 4*h/10+1, w /10-1, h/10-1);
-			}
-			if(l1 == true){
-				g2.fillRect(w/4 + 3*w/10+1, h/4 +1, w /10-1, h/10-1);
-				g2.fillRect(w/4 + 2*w/10+1, h/4 + h/10+1, w /10-1, h/10-1);
-				g2.fillRect(w/4 + w/10+1, h/4 + 2*h/10+1, w /10-1, h/10-1);
-				g2.fillRect(w/4 +1, h/4 + 3*h/10+1, w /10-1, h/10-1);
-			}
-			if(l1n == true){
-				g2.fillRect(w/4 + 4*w/10+1, h/4 + h/10+1, w /10-1, h/10-1);
-				g2.fillRect(w/4 + 3*w/10+1, h/4 + h/5+1, w /10-1, h/10-1);
-				g2.fillRect(w/4 + 2*w/10+1, h/4 + 3*h/10+1, w /10-1, h/10-1);
-				g2.fillRect(w/4 +w/10+1, h/4 + 4*h/10+1, w /10-1, h/10-1);
-			}
-			if(l2 == true){
-				g2.fillRect(w/4 + 2*w/10+1, h/4 +1, w /10-1, h/10-1);
-				g2.fillRect(w/4 + w/10+1, h/4 + h/10+1, w /10-1, h/10-1);
-				g2.fillRect(w/4 +1, h/4 + 2*h/10+1, w /10-1, h/10-1);
-			}
-			if(l2n == true){
-				g2.fillRect(w/4 + 4*w/10+1, h/4 + 2*h/10+1, w /10-1, h/10-1);
-				g2.fillRect(w/4 + 3*w/10+1, h/4 + 3*h/10+1, w /10-1, h/10-1);
-				g2.fillRect(w/4 + 2*w/10+1, h/4 + 4*h/10+1, w /10-1, h/10-1);
-			}
-			if(l3 == true){
-				g2.fillRect(w/4 + w/10+1, h/4 +1, w /10-1, h/10-1);
-				g2.fillRect(w/4 +1, h/4 + h/10+1, w /10-1, h/10-1);
-			}
-			if(l3n == true){
-				g2.fillRect(w/4 + 4*w/10+1, h/4 + 3*h/10+1, w /10-1, h/10-1);
-				g2.fillRect(w/4 + 3*w/10+1, h/4 + 4*h/10+1, w /10-1, h/10-1);
-			}
-			if(l4 == true){
-				g2.fillRect(w/4 +1, h/4 +1, w /10-1, h/10-1);
-			}
-			if(l4n == true){
-				g2.fillRect(w/4 + 4*w/10+1, h/4 + 4*h/10+1, w /10-1, h/10-1);
-			}
-			//}
-		//if(showCU == true){//if(showCU == true){ //TODO looks suspicious
-
-//			else{
-//				if(hiLiFB == true || hiLiOS == true){
-//					g2.setColor(new Color(255,128,0,10));
-//				}
-//				else{
-//					g2.setColor(new Color(255,128,0,aNr));
-//				}
-//			}
-			if(lc0 == true){
-				g2.fillRect(w/4+ 4*w/10+1, h/4+1, w /10-1, h/10-1);
-				g2.fillRect(w/4 + 3*w/10+1, h/4 + h/10+1, w /10-1, h/10-1);
-				g2.fillRect(w/4 + w/5+1, h/4 + h/5+1, w /10-1, h/10-1);
-				g2.fillRect(w/4 + w/10+1, h/4 + 3*h/10+1, w /10-1, h/10-1);
-				g2.fillRect(w/4 +1, h/4 + 4*h/10+1, w /10-1, h/10-1);
-			}
-			if(lc1 == true){
-				g2.fillRect(w/4 + 3*w/10+1, h/4 +1, w /10-1, h/10-1);
-				g2.fillRect(w/4 + 2*w/10+1, h/4 + h/10+1, w /10-1, h/10-1);
-				g2.fillRect(w/4 + w/10+1, h/4 + 2*h/10+1, w /10-1, h/10-1);
-				g2.fillRect(w/4 +1, h/4 + 3*h/10+1, w /10-1, h/10-1);
-			}
-			if(lc1n == true){
-				g2.fillRect(w/4 + 4*w/10+1, h/4 + h/10+1, w /10-1, h/10-1);
-				g2.fillRect(w/4 + 3*w/10+1, h/4 + h/5+1, w /10-1, h/10-1);
-				g2.fillRect(w/4 + 2*w/10+1, h/4 + 3*h/10+1, w /10-1, h/10-1);
-				g2.fillRect(w/4 +w/10+1, h/4 + 4*h/10+1, w /10-1, h/10-1);
-			}
-			if(lc2 == true){
-				g2.fillRect(w/4 + 2*w/10+1, h/4 +1, w /10-1, h/10-1);
-				g2.fillRect(w/4 + w/10+1, h/4 + h/10+1, w /10-1, h/10-1);
-				g2.fillRect(w/4 +1, h/4 + 2*h/10+1, w /10-1, h/10-1);
-			}
-			if(lc2n == true){
-				g2.fillRect(w/4 + 4*w/10+1, h/4 + 2*h/10+1, w /10-1, h/10-1);
-				g2.fillRect(w/4 + 3*w/10+1, h/4 + 3*h/10+1, w /10-1, h/10-1);
-				g2.fillRect(w/4 + 2*w/10+1, h/4 + 4*h/10+1, w /10-1, h/10-1);
-			}
-			if(lc3 == true){
-				g2.fillRect(w/4 + w/10+1, h/4 +1, w /10-1, h/10-1);
-				g2.fillRect(w/4 +1, h/4 + h/10+1, w /10-1, h/10-1);
-			}
-			if(lc3n == true){
-				g2.fillRect(w/4 + 4*w/10+1, h/4 + 3*h/10+1, w /10-1, h/10-1);
-				g2.fillRect(w/4 + 3*w/10+1, h/4 + 4*h/10+1, w /10-1, h/10-1);
-			}
-			if(lc4 == true){
-				g2.fillRect(w/4 +1, h/4 +1, w /10-1, h/10-1);
-			}
-			if(lc4n == true){
-				g2.fillRect(w/4 + 4*w/10+1, h/4 + 4*h/10+1, w /10-1, h/10-1);
-			}
-			//}
-		//if(showOS == true){//if(showOS == true){ //TODO also looks suspicious
-//			if(hiLiOS == true){
-//				g2.setColor(new Color(255,255,0));
-//			}
-//			else{
-//				if(hiLiFB == true || hiLiCU == true){
-//					g2.setColor(new Color(255,255,0,10));
-//				}
-//				else{
-//					g2.setColor(new Color(255,255,0,aNr));
-//				}
-//			}
-			if(lo0 == true){
-				g2.fillRect(w/4+1, h/4+1, w /10-1, h/10-1);
-				g2.fillRect(w/4 + w/10+1, h/4 + h/10+1, w /10-1, h/10-1);
-				g2.fillRect(w/4 + w/5+1, h/4 + h/5+1, w /10-1, h/10-1);
-				g2.fillRect(w/4 + 3*w/10+1, h/4 + 3*h/10+1, w /10-1, h/10-1);
-				g2.fillRect(w/4 + 4*w/10+1, h/4 + 4*h/10+1, w /10-1, h/10-1);
-			}
-			if(lo1 == true){
-				g2.fillRect(w/4 + 3*w/10+1, h/4 +1, w /10-1, h/10-1);
-				g2.fillRect(w/4 + 2*w/10+1, h/4 + h/10+1, w /10-1, h/10-1);
-				g2.fillRect(w/4 + w/10+1, h/4 + 2*h/10+1, w /10-1, h/10-1);
-				g2.fillRect(w/4 +1, h/4 + 3*h/10+1, w /10-1, h/10-1);
-			}
-			if(lo1n == true){
-				g2.fillRect(w/4 + 4*w/10+1, h/4 + h/10+1, w /10-1, h/10-1);
-				g2.fillRect(w/4 + 3*w/10+1, h/4 + h/5+1, w /10-1, h/10-1);
-				g2.fillRect(w/4 + 2*w/10+1, h/4 + 3*h/10+1, w /10-1, h/10-1);
-				g2.fillRect(w/4 +w/10+1, h/4 + 4*h/10+1, w /10-1, h/10-1);
-			}
-			if(lo2 == true){
-				g2.fillRect(w/4 + 2*w/10+1, h/4 +1, w /10-1, h/10-1);
-				g2.fillRect(w/4 + w/10+1, h/4 + h/10+1, w /10-1, h/10-1);
-				g2.fillRect(w/4 +1, h/4 + 2*h/10+1, w /10-1, h/10-1);
-			}
-			if(lo2n == true){
-				g2.fillRect(w/4 + 4*w/10+1, h/4 + 2*h/10+1, w /10-1, h/10-1);
-				g2.fillRect(w/4 + 3*w/10+1, h/4 + 3*h/10+1, w /10-1, h/10-1);
-				g2.fillRect(w/4 + 2*w/10+1, h/4 + 4*h/10+1, w /10-1, h/10-1);
-			}
-			if(lo3 == true){
-				g2.fillRect(w/4 + w/10+1, h/4 +1, w /10-1, h/10-1);
-				g2.fillRect(w/4 +1, h/4 + h/10+1, w /10-1, h/10-1);
-			}
-			if(lo3n == true){
-				g2.fillRect(w/4 + 4*w/10+1, h/4 + 3*h/10+1, w /10-1, h/10-1);
-				g2.fillRect(w/4 + 3*w/10+1, h/4 + 4*h/10+1, w /10-1, h/10-1);
-			}
-			if(lo4 == true){
-				g2.fillRect(w/4 +1, h/4 +1, w /10-1, h/10-1);
-			}
-			if(lo4n == true){
-				g2.fillRect(w/4 + 4*w/10+1, h/4 + 4*h/10+1, w /10-1, h/10-1);
-			}
-			//}
 
 		}
 	}
