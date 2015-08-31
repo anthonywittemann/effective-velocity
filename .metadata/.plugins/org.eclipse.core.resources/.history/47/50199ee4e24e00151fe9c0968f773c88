@@ -962,21 +962,20 @@ public class MainC extends JPanel implements ActionListener, MouseListener, Mous
 		previousPitchLbl.setText("PP: ");
 	}
 	
-	//for button clicks - looks OK
+	//for button clicks - TODO check this out
 	public void actionPerformed(ActionEvent e) {
 		if(showORhide == true){
 			nextPitchLbl.setVisible(true);
 			fBLbl.setVisible(true);
 			cULbl.setVisible(true);
 			osLbl.setVisible(true);
-		} else{
+		}
+		else{
 			nextPitchLbl.setVisible(false);
 			fBLbl.setVisible(false);
 			cULbl.setVisible(false);
 			osLbl.setVisible(false);
 		}
-		
-		
 		if(e.getSource() == newBatterButton){
 			rHButton.setVisible(true);
 			lHButton.setVisible(true);
@@ -984,31 +983,32 @@ public class MainC extends JPanel implements ActionListener, MouseListener, Mous
 			instructionsLbl.setVisible(false);
 			setALLBsF();
 		}
-		
-		if(e.getSource() == rHButton || e.getSource() == lHButton){
-			if(e.getSource() == rHButton){
-				wH = true;
-			} else{
-				wH = false;
-			}
+		if(e.getSource() == rHButton){
+			wH = true;
 			rHButton.setVisible(false);
 			lHButton.setVisible(false);
 			newBatterButton.setVisible(true);
 			instructionsLbl.setVisible(true);
 		}
-		
-		
+		else if(e.getSource() == lHButton){
+			wH = false;
+			rHButton.setVisible(false);
+			lHButton.setVisible(false);
+			newBatterButton.setVisible(true);
+			instructionsLbl.setVisible(true);
+		}
 		if(e.getSource() == showORhideButton){
 			if(showORhide == false){
 				showORhideButton.setText(">");
 				showORhide = true;
-			} else{
+			}
+			else{
 				showORhideButton.setText("<");
 				showORhide = false;
 			}
 		}
 		
-		if(e.getSource() == fastBButton || e.getSource() == changeU || e.getSource() == offSpeed){
+		if(e.getSource() == fastBButton){
 			if(wasFB){
 				previousPitchLbl.setText("PP: FB");
 			} else if(wasCU){
@@ -1016,24 +1016,40 @@ public class MainC extends JPanel implements ActionListener, MouseListener, Mous
 			} else{
 				previousPitchLbl.setText("PP: OS");
 			}
-			
-			if(e.getSource() == fastBButton){
-				pitchLbl.setText("Pitch: Fastball    ");
-				pitchLbl.setForeground(new Color(255,0,0));
-				wasFB = true; wasCU = false; wasOS = false;
-			} else if(e.getSource() == changeU){
-				pitchLbl.setForeground(new Color(255,128,0));
-				pitchLbl.setText("Pitch: Change Up    ");
-				wasFB = false; wasCU = true; wasOS = false;
-			} else{
-				pitchLbl.setForeground(new Color(255,255,0));
-				pitchLbl.setText("Pitch: Off Speed    ");
-				wasFB = false; wasCU = false;  wasOS = true;
-			}
-			
+			pitchLbl.setText("Pitch: Fastball    ");
+			pitchLbl.setForeground(new Color(255,0,0));
 			pitchTypePanel.setVisible(false);
+			wasFB = true; wasCU = false; wasOS = false;
 			fillInBoxes();
 
+		}
+		else if(e.getSource() == changeU){
+			if(wasFB){
+				previousPitchLbl.setText("PP: FB");
+			} else if(wasCU){
+				previousPitchLbl.setText("PP: CU");
+			} else{
+				previousPitchLbl.setText("PP: OS");
+			}
+			pitchLbl.setForeground(new Color(255,128,0));
+			pitchLbl.setText("Pitch: Change Up    ");
+			pitchTypePanel.setVisible(false);
+			wasFB = false; wasCU = true; wasOS = false;
+			fillInBoxes();
+		}
+		else if(e.getSource() == offSpeed){
+			if(wasFB){
+				previousPitchLbl.setText("PP: FB");
+			} else if(wasCU){
+				previousPitchLbl.setText("PP: CU");
+			} else{
+				previousPitchLbl.setText("PP: OS");
+			}
+			pitchLbl.setForeground(new Color(255,255,0));
+			pitchLbl.setText("Pitch: Off Speed    ");
+			pitchTypePanel.setVisible(false);
+			wasFB = false; wasCU = false;  wasOS = true;
+			fillInBoxes();
 		}
 		
 		if(aNr < 255){
